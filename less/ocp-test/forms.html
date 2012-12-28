@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tests · OCP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../docs/assets/css/docs.css" rel="stylesheet">
+    <link href="../../docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- CSS just for the tests page -->
+    <!--<link href="css-tests.css" rel="stylesheet">-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../docs/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../docs/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../docs/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../docs/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../docs/assets/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+
+<body>
+
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="../../docs/index.html">OCP -DPL</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Masthead
+   ================================================== -->
+    <header class="jumbotron subhead" id="overview">
+        <h1>[ Forms ] CSS Tests</h1>
+        <p class="lead">OCP中的表单垂直布局样式.</p>
+    </header>
+
+
+    <div class="page-header">
+        <h2>Form</h2>
+    </div>
+
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>关于表单结构的说明</h3>
+            <p><code>form</code>元素必须添加<code>ocp-form-horizontal</code>样式，form内部结构为：</p>
+            <p>最外层<code>fieldset</code>元素，<code>div.control-group</code>为一行字段，<code>label.control-label</code>为字段标题，<code>div.control</code>为字段区域，</p>
+            <p>
+                <pre class="prettyprint">
+	  &lt;form class="ocp-form-horizontal"&gt;
+		&lt;fieldset&gt;
+		  &lt;div class="control-group"&gt;
+			&lt;label class="control-label" for="input01"&gt;文本输入框&lt;/label&gt;
+			&lt;div class="controls"&gt;
+			  &lt;input type="text" class="input-xlarge" id="input01"&gt;
+			&lt;/div&gt;
+		  &lt;/div&gt;
+		&lt;/fieldset&gt;
+	  &lt;/form&gt;
+                </pre>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+		<div class="span6 offset1">
+			<legend>OCP 表单控件</legend>
+			<form class="ocp-form-horizontal">
+				<fieldset>
+				  <div class="control-group">
+					<label class="control-label" for="input01">活动名称:</label>
+					<div class="controls">
+					  <p><input type="text" class="input-smini" placeholder="smin"></p>
+					  <p><input type="text" class="input-mini" placeholder="min"></p>
+					  <p><input type="text" class="input-small" placeholder="small"></p>
+					  <p><input type="text" class="input-medium" placeholder="medium"></p>
+					  <p><input type="text" class="input-large" placeholder="large"></p>
+					  <p><input type="text" class="input-xlarge" placeholder="xlarge"></p>
+					  <p class="help-block">
+							( 即将上线功能： 定向优惠、抽奖、 投票、 掌柜说话题讨论区 )
+					  </p>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="optionsCheckbox">活动页面所需功能:</label>
+					<div class="controls">
+					  <label class="checkbox">
+						<input type="checkbox" id="optionsCheckbox" value="option1">
+						活动招商报名
+					  </label>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="optionsCheckbox">活动页面所需功能:</label>
+					<div class="controls">
+					  <label class="radio inline">
+						<input type="radio" value="option1">
+						普通活动
+					  </label>
+					  <label class="radio inline">
+						<input type="radio" value="option2">
+						P4P直通车活动
+					  </label>
+						  <div class="bubble" style="width: 180px; margin-top: 10px">
+								<div class="bubble-arrow bubble-arrow-top"><i></i><i></i></div>
+								可申请宝贝数量：<input type="text" class="input-smini">件
+						  </div>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="optionsCheckbox">是否需要活动协议:</label>
+					<div class="controls">
+					  <label class="radio">
+						<input type="radio" value="option1">
+						是
+					  </label>
+					  <label class="radio">
+						<input type="radio" value="option2">
+						否
+					  </label>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="select01">选择框:</label>
+					<div class="controls">
+					  <select id="select01">
+						<option>请选择</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					  </select>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="multiSelect">复选框:</label>
+					<div class="controls">
+					  <select multiple="multiple" id="multiSelect">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					  </select>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="fileInput">上传框:</label>
+					<div class="controls">
+					  <input class="input-file" id="fileInput" type="file">
+					</div>
+				  </div>
+				  <div class="control-group">
+					<label class="control-label" for="textarea">文本域:</label>
+					<div class="controls">
+					  <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+					</div>
+				  </div>
+				  <div class="form-actions">
+					<button type="submit" class="btn btn-primary">保存更改</button>
+					<button class="btn">取消</button>
+				  </div>
+				</fieldset>
+		  </form>
+		</div>
+			
+		<div class="span4">
+		  <h3>包含哪些控件</h3>
+		  <p>左侧即是OCP-DPL支持的所有默认表单控件:</p>
+		  <ul>
+			<li>文本输入框 (文本，密码，邮件等等)</li>
+			<li>复选框</li>
+			<li>单选框</li>
+			<li>下拉框</li>
+			<li>多选框</li>
+			<li>上传框</li>
+			<li>文本域</li>
+		  </ul>
+		  <hr>
+		  <h3>OCP Form中对input约定了不同长度的专属样式</h3>
+		  <p>
+			<code>.input-smini</code><code>.input-mini</code><code>.input-small</code><code>.input-medium</code>等。
+		  </p>
+		  <hr>
+		  <h3>单选框和复选框</h3>
+		  <p>
+			罗列单选框和复选框时，要将它嵌套到到其他标记内。 只须用 <code>&lt;label class="checkbox"&gt;</code>、<code>&lt;input type="checkbox"&gt;</code> 包含即可。
+			也支持行级单选框和复选框。只要对 .checkbox 或 .radio 应用 .inline 即可。
+		  </p>
+		  <hr>
+		  <h3>标注提示信息</h3>
+		  <p>
+			再另一行标注提示信息时。 只须用 <code>&lt;p class="help-block"&gt;</code> 或 <code>&lt;p class="help-inline"&gt;</code> 包含即可。
+		  </p>
+		  <hr>
+		  <h3>表单操作区域</h3>
+		  <p>
+			提交按钮等所在的操作区域， 只须用 <code>&lt;div class="form-actions"&gt;</code> 包含即可。
+		  </p>
+		  
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

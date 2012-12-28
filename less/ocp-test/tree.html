@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tests · OCP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../docs/assets/css/docs.css" rel="stylesheet">
+    <link href="../../docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- CSS just for the tests page -->
+    <!--<link href="css-tests.css" rel="stylesheet">-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../docs/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../docs/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../docs/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../docs/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../docs/assets/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+
+<body>
+
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="../../docs/index.html">OCP -DPL</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Masthead
+   ================================================== -->
+    <header class="jumbotron subhead" id="overview">
+        <h1>[ Tree ] CSS Tests</h1>
+        <p class="lead">OCP中的常用信息气泡样式.</p>
+    </header>
+
+    <!-- 行内元素列表 inline-list
+   ================================================== -->
+
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>关于树节点的说明</h3>
+            <p>树的实现暂定Kissy treeNode，由于DOM结构完全依赖JS代码生成，所以DPL主要是对CSS的约定，DOM结构固定不变。<code>goog-</code>是特定的CSS前缀</p>
+            <p>树节点的DOM结构大致分成4个部分：<code>.expand-icon</code>展开状态<code>.item-checked</code>勾选状态<code>.folder-icon</code>节点状态<code>span</code>节点文案<code>.tree-children</code>子节点</p>
+            <p>使用箭头必须设置箭头的位置，四个方向的class分别为：<code>bubble-arrow-top</code>、<code>bubble-arrow-left</code>、<code>bubble-arrow-right</code>、<code>bubble-arrow-bottom</code></p>
+            <p>
+                <pre class="prettyprint">
+&lt;div class="goog-tree-row goog-tree-root-row goog-tree-root-check-selected goog-tree-item-check-selected goog-tree-item-selected">
+	&lt;div class="goog-inline-block goog-tree-icon goog-tree-expand-icon goog-tree-expand-icon-lminus"&gt;&lt;/div&gt;
+	&lt;div class="goog-inline-block goog-tree-icon goog-tree-item-checked0"&gt;&lt;/div&gt;
+	&lt;div class="goog-inline-block goog-tree-icon goog-tree-expanded-folder-icon"&gt;&lt;/div&gt;
+	&lt;span id="tree-item297" class="goog-tree-item-label"&gt;淘宝网&lt;/span&gt;
+&lt;/div&gt;
+&lt;div role="group" class="goog-tree-lchildren" style=""&gt;
+&lt;/div&gt;
+                </pre>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>箭头在上方</h3>
+            <div class="bubble"><div class="bubble-arrow bubble-arrow-top"><i></i><i></i></div>这是一个小气泡</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>箭头在下方</h3>
+            <div class="bubble"><div class="bubble-arrow bubble-arrow-bottom"><i></i><i></i></div>这是一个小气泡</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

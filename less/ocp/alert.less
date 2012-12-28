@@ -1,0 +1,59 @@
+// OCP - ALERT STYLES
+// -------------
+
+// 变量
+// -------------
+
+// 警告颜色
+@ocpAlertWarningBackground: #ffffe5;
+@ocpAlertWarningBorder: #ffcc7f;
+// 成功颜色
+@ocpAlertSuccessBackground: #f0ffe5;
+@ocpAlertSuccessBorder: #4dbf00;
+// 错误颜色
+@ocpAlertErrorBackground: #fff3f3;
+@ocpAlertErrorBorder: #ff8080;
+// 信息颜色
+@ocpAlertInfoBackground: #e6f5ff;
+@ocpAlertInfoBorder: #40b3ff;
+// 疑问颜色
+@ocpAlertQuestionBackground: #f2f2f2;
+@ocpAlertQuestionBorder: #bfbfbf;
+// 文字颜色，暂时使用inherit
+@ocpAlertTextColor: inherit;
+
+// 覆盖alert的基本样式
+.alert {
+    padding: 3px 5px 3px 5px;
+    margin-bottom: @baseLineHeight;
+    text-shadow: none;
+    background-color: @ocpAlertWarningBackground;
+    border: 1px solid @ocpAlertWarningBorder;
+    .border-radius(0px);
+    color: @ocpAlertTextColor;
+}
+
+.alert-warning {
+    background-color: @ocpAlertWarningBackground;
+    border: 1px solid @ocpAlertWarningBorder;
+}
+
+.alert-success {
+    background-color: @ocpAlertSuccessBackground;
+    border: 1px solid @ocpAlertSuccessBorder;
+}
+
+.alert-info {
+    background-color: @ocpAlertInfoBackground;
+    border: 1px solid @ocpAlertInfoBorder;
+}
+
+.alert-error {
+    background-color: @ocpAlertErrorBackground;
+    border: 1px solid @ocpAlertErrorBorder;
+}
+
+.alert-question {
+    background-color: @ocpAlertQuestionBackground;
+    border: 1px solid @ocpAlertQuestionBorder;
+}

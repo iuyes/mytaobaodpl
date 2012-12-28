@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tests · OCP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../docs/assets/css/docs.css" rel="stylesheet">
+    <link href="../../docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!-- Le styles -->
+
+    <!-- CSS just for the tests page -->
+    <!--<link href="css-tests.css" rel="stylesheet">-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../docs/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../docs/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../docs/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../docs/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../docs/assets/ico/apple-touch-icon-57-precomposed.png">
+	
+	<style>
+		
+/*ie6 下特殊处理*/
+* html .bubble .bubble-arrow i{display:none}
+* html .bubble .bubble-arrow-left{width:7px;height:13px;left:-7px;background:url(http://img02.taobaocdn.com/tps/i2/T18IfIXdtfXXcXGQ_a-7-13.png) left top no-repeat}
+	</style>
+</head>
+
+<body>
+
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="../../docs/index.html">OCP -DPL</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Masthead
+   ================================================== -->
+    <header class="jumbotron subhead" id="overview">
+        <h1>[ Bubble ] CSS Tests</h1>
+        <p class="lead">OCP中的常用信息气泡样式.</p>
+    </header>
+
+    <!-- 行内元素列表 inline-list
+   ================================================== -->
+
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>关于箭头的说明</h3>
+            <p>箭头的实现使用的是两个宽高均为0的<code>i</code>元素，叠加，并设置其border来实现。箭头的大小和border宽度均可以再源码中设置</p>
+            <p>箭头的具体位置可以通过手动设置<code>.bubble-arrow</code>的<code>left、right、bottom、top</code>值来实现</p>
+            <p>使用箭头必须设置箭头的位置，四个方向的class分别为：<code>bubble-arrow-top</code>、<code>bubble-arrow-left</code>、<code>bubble-arrow-right</code>、<code>bubble-arrow-bottom</code></p>
+            <p>一般的HTML结构如下：也可以根据需要添加多个箭头，只需要多设置几个<code>bubble-arrow</code>便可</p>
+            <p>
+                <pre class="prettyprint">
+                    &lt;div class="bubble"&gt;
+                        &lt;div class="bubble-arrow bubble-arrow-top"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+                        这是一个小气泡
+                    &lt;/div&gt;
+                </pre>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>箭头在上方</h3>
+            <div class="bubble"><div class="bubble-arrow bubble-arrow-top"><i></i><i class="last"></i></div>这是一个小气泡</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>箭头在下方</h3>
+            <div class="bubble"><div class="bubble-arrow bubble-arrow-bottom"><i></i><i class="last"></i></div>这是一个小气泡</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>箭头在左方</h3>
+			<div class="bubble">
+				<span class="bubble-arrow bubble-arrow-left"><i></i><i class="last"></i></span>这是一个小气泡</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>箭头在右方</h3>
+            <div class="bubble"><div class="bubble-arrow bubble-arrow-right"><i></i><i class="last"></i></div>这是一个小气泡</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span10 offset1">
+            <h3>两个箭头</h3>
+            <div class="bubble">
+                <div class="bubble-arrow bubble-arrow-top"><i></i><i class="last"></i></div>
+                <div class="bubble-arrow bubble-arrow-top" style="left: auto; right: 50px"><i></i><i class="last"></i></div>
+                这是一个小气泡</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

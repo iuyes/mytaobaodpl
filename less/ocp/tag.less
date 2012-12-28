@@ -1,0 +1,37 @@
+// OCP - TAG STYLES
+// -------------
+
+@height: 20px;
+@tagHoverColor: #f3f3f3;
+@tagBackgroundImage: "http://img03.taobaocdn.com/tps/i3/T1dDzBXfFiXXbCoE..-14-14.png";
+
+// normal
+span[class^="ocp-tag-"] {
+	display:inline-block;
+	vertical:middle;
+	padding:5px @height;
+	height:@height;
+	line-height:@height;
+	border:1px solid #39c;
+	background-color:#e6f5ff;
+	cursor:pointer;
+}
+
+span[class^="ocp-tag-"] i {
+	margin-right:-15px;
+	margin-left:10px;
+}
+span[class^="ocp-tag-"]:hover {
+    background-color: @tagHoverColor;
+}
+.ocp-tag-normal i {
+    visibility: hidden;
+}
+span[class^="ocp-tag-"]:hover i {
+    visibility: visible;
+}
+.ocp-tag-selected {
+	background-image:url(@tagBackgroundImage);
+	background-repeat:no-repeat;
+	background-position:right bottom;
+}

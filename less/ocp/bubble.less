@@ -1,0 +1,131 @@
+// OCP - BUBBLE STYLES
+// -------------
+
+// 变量
+// -------------
+
+// 气泡背景色
+@ocpBubbleBackgrond: #ffffdd;
+@ocpBubbleBackgrondGray: #f2f2f2;
+// 气泡边框颜色
+@ocpBubbleBorder: #ffcc66;
+@ocpBubbleBorderGray: #ddd;
+// 气泡箭头边框宽度
+@ocpBubbleArrowBorderWidth: 1px;
+// 气泡箭头高度
+// 在Mac 的chrome 19 疑似有bug, 在 border-width 为 9px，7px，6px等的情况，宽度不为两倍...这个bug目前只能在我的机器上重现..尼玛
+@ocpBubbleArrowWidth: 6px;
+
+.bubble {
+    padding: 5px;
+    margin-bottom: @baseLineHeight;
+    background-color: @ocpBubbleBackgrond;
+    border: 1px solid @ocpBubbleBorder;
+    color: inherit;
+    position: relative;
+  	zoom:1;/*ie7 hack*/
+
+    .bubble-arrow {
+        position: absolute;
+
+        i {
+            height: 0px;
+            width: 0px;
+            border-color: transparent;
+            border-style: solid;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        // 只有第一个和最后一个i有效,ie8,ie7不识别last-child
+        i:first-child {
+            border-width: @ocpBubbleArrowWidth + @ocpBubbleArrowBorderWidth;
+        }
+
+        i.last {
+            border-width: @ocpBubbleArrowWidth;
+        }
+    }
+
+    // 让箭头出现在上方
+    .bubble-arrow-top {
+
+        top: -(@ocpBubbleArrowWidth + @ocpBubbleArrowBorderWidth) * 2;
+        left: 10px;
+
+        i:first-child {
+            border-bottom-color: @ocpBubbleBorder;
+        }
+
+        i.last {
+            top: @ocpBubbleArrowBorderWidth * 2;
+            left: @ocpBubbleArrowBorderWidth;
+            border-bottom-color: @ocpBubbleBackgrond;
+        }
+    }
+
+    // 让箭头出现在下方
+    .bubble-arrow-bottom {
+
+        bottom: 0;
+        left: 10px;
+
+        i:first-child {
+            border-top-color: @ocpBubbleBorder;
+        }
+
+        i.last {
+            bottom: @ocpBubbleArrowBorderWidth * 2;
+            left: @ocpBubbleArrowBorderWidth;
+            border-top-color: @ocpBubbleBackgrond;
+        }
+    }
+
+    // 让箭头出现在下方
+    .bubble-arrow-left {
+
+        top: 5px;
+        left: -(@ocpBubbleArrowWidth + @ocpBubbleArrowBorderWidth) * 2;
+
+        i:first-child {
+            border-right-color: @ocpBubbleBorder;
+        }
+
+        i.last {
+            left: @ocpBubbleArrowBorderWidth * 2;
+            top: @ocpBubbleArrowBorderWidth;
+            border-right-color: @ocpBubbleBackgrond;
+        }
+    }
+
+    // 让箭头出现在下方
+    .bubble-arrow-right {
+
+        top: 5px;
+        right: 0;
+
+        i:first-child {
+            border-left-color: @ocpBubbleBorder;
+        }
+
+        i.last {
+            left: 0;
+            top: @ocpBubbleArrowBorderWidth;
+            border-left-color: @ocpBubbleBackgrond;
+        }
+    }
+}
+
+.bubble-gray{
+	background-color: @ocpBubbleBackgrondGray;
+	border: 1px solid @ocpBubbleBorderGray;
+    .bubble-arrow-top {
+        i:first-child {
+			border-bottom-color: @ocpBubbleBorderGray;
+        }
+
+        i.last {
+			border-bottom-color: @ocpBubbleBackgrondGray;
+        }
+    }
+} 

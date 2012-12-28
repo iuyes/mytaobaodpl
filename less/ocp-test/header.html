@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>运营平台共用套头</title>
+		<meta charset="gbk"/>
+		<meta http-equiv="X-UA-Compatible" content="edge" />
+		
+	    <!-- Le styles -->
+	    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+	    
+		<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js" type="text/javascript" ></script>
+		
+		<!-- start of TMS head assets -->
+		<!-- url http://www.taobao.com/go/rgn/ocp/header-assets.php -->
+		<script type="text/javascript" >
+			//运营平台公用包
+			KISSY.app('OCP');			
+			KISSY.config({
+				packages : [{
+					name : "ocp",
+					//tag : Math.floor(Math.random() * 9999999),
+					path : 'http://assets.daily.taobao.net/p/',
+					charset : "gbk"
+				}]
+			});
+			
+		</script>
+		<!-- end of TMS head assets -->
+	</head>
+
+	<body>
+		<!-- start of header vmcommon-->
+		<script>
+			//设置当前导航高亮
+			OCP.currentNav = "2220";
+			//移除导航节点，权限控制
+			OCP.removeDomId = "navKey_5000";
+		</script>
+		<div class="full-screen" id="top-nav">
+			<div class="nav-main clearfix">
+				<div class="logo clearfix">
+					<a href="http://pearl.admin.taobao.org:8080/" class="f_h1" title="运营平台"></a>
+				</div>
+				<div class="right-box">
+					<ol class="clearfix unstyled">
+						<li>
+							欢迎回来！<em class="name">admin</em><a href="http://pearl.admin.taobao.org:8080/console/logout.htm?cmd=out">退出</a>
+						</li>
+						<li>
+							<a href="http://pearl.admin.taobao.org:8080/">首页</a>
+						</li>
+						<li class="last">
+							<a href="http://pearl.admin.taobao.org:8080/message_center.htm">消息中心</a><em class="num"></em>
+						</li>
+					</ol>
+				</div>
+				<!-- start of tms headNav-->
+				<!-- url  http://www.taobao.com/go/rgn/ocp/header-nav.php  -->
+				<!-- url  http://www.taobao.com/go/rgn/ocp/header-nav-daily.php  -->
+				<div class="nav-box">
+					<ol class="nav_list unstyled">
+						<li id="navKey_1000">
+							类目管理
+						</li>
+						<li id="navKey_2000">
+							商品管理
+						</li>
+						<li id="navKey_3000">
+							导购营销
+						</li>
+						<li id="navKey_4000">
+							卖家管理
+						</li>
+						<li id="navKey_5000">
+							公共管理
+						</li>
+					</ol>
+					<div class="search-box">
+						<form>
+							<select name="decorateSelect" id="decorateSelect">
+								<option value="http://pearl.admin.taobao.org:8080/index_search_forward.htm">商品</option>
+								<option value="http://pearl.admin.taobao.org:8080/cat_map_category_main.htm">前台类目</option>
+								<option value="http://pearl.admin.taobao.org:8080/std_category_property.htm">后台类目</option>
+								<option value="http://dangan.taobao.ali.com/v2/detail/singleDetail.htm?vid=po">卖家</option>
+							</select>
+							<input class="key-word" type="text" value="输入关键词"/>
+							<input class="s-search" type="submit" value="" />
+						</form>
+					</div>
+					<div class="two-level">
+						<ul class="unstyled">
+							<li id="navKey_1100">
+								<a href="http://mckinley.admin.taobao.org/mckinley/forest/std_property_type_repo.htm?optTypeCode=1100">属性库</a>
+							</li>
+							<li id="navKey_1200">
+								<a href="http://mckinley.admin.taobao.org/mckinley/forest/std_brand_values.htm?optTypeCode=1200">品牌管理</a>
+							</li>
+							<li id="navKey_1300">
+								<a href="http://pearl.admin.taobao.org:8080/cat_map_category_main.htm?optTypeCode=1300">前台类目</a>
+							</li>
+							<li id="navKey_1400">
+								<a href="http://pearl.admin.taobao.org:8080/std_category_property.htm?optTypeCode=1400">后台类目</a>
+							</li>
+							<li id="navKey_1500">
+								<a href="http://pearl.admin.taobao.org:8080/cat_product_feature.htm?optTypeCode=1500">类目特征管理</a>
+							</li>
+							<li id="navKey_1600">
+								<a href="http://pearl.admin.taobao.org:8080/theme.htm?optTypeCode=1600">商品移动管理</a>
+							</li>
+							<li class="has_third" id="navKey_1700">
+								<span>SPU</span>
+								<dl>
+									<dt class="last" id="navKey_1710">
+										<a href="http://mckinley.admin.taobao.org/mckinley/forest/spu_repo_list.htm?optTypeCode=1700">SPU管理</a>
+									</dt>
+								</dl>
+							</li>
+						</ul>
+						<ul class="unstyled">
+							<li id="navKey_2100">
+								<a href="http://mckinley.admin.taobao.org/mckinley/auction/keyword/listKeywordGroup.htm?optTypeCode=2100">关键字管理</a>
+							</li>
+							<li class="has_third" id="navKey_2200">
+								<span>价格管理</span>
+								<dl>
+									<dt id="navKey_2210">
+										<a href="http://mckinley.admin.taobao.org/mckinley/forest/sccp/index.htm?optTypeCode=2200">物价局</a>
+									</dt>
+									<dt class="last" id="navKey_2220">
+										<a href="http://mckinley.admin.taobao.org/mckinley/auxiliary/listAucCategoryPriceLimit.htm?optTypeCode=2210">类目价格限制</a>
+									</dt>
+								</dl>
+							</li>
+							<li id="navKey_2300">
+								<a href="http://mckinley.admin.taobao.org/mckinley/auxiliary/std_category_num_limit.htm?optTypeCode=2300">发布数量设置</a>
+							</li>
+							<li class="has_third" id="navKey_2400">
+								<span>描述规范管理</span>
+								<dl>
+									<dt id="navKey_2410">
+										<a href="http://mckinley.admin.taobao.org/mckinley/tangram/formalTemplateInfo.htm?optTypeCode=2410">官方模板</a>
+									</dt>
+									<dt class="last" id="navKey_2420">
+										<a href="http://mckinley.admin.taobao.org/mckinley/tangram/detailTemplateInfo.htm?optTypeCode=2420">模块信息规范</a>
+									</dt>
+								</dl>
+							</li>
+							<li id="navKey_2500">
+								<a href="http://pearl.admin.taobao.org:8080/admin/auction_search.htm?entrance=crmIM&version=1&optTypeCode=2500">宝贝管理</a>
+							</li>
+							<li id="navKey_2600">
+								<a href="http://mckinley.admin.taobao.org/mckinley/auction/commodity/listOnlineAuction.htm?optTypeCode=2600">宝贝批量管理</a>
+							</li>
+							<li class="has_third" id="navKey_2700">
+								<span>IFD</span>
+								<dl>
+									<dt id="navKey_2710">
+										<a href="http://mckinley.admin.taobao.org/mckinley/auction/auctionsupport/commodityDogRedirect.htm?url=http://cmp.admin.taobao.org:8000/commoditydog.html&map=display&optTypeCode=2710">IFD模型</a>
+									</dt>
+									<dt id="navKey_2720">
+										<a href="http://cmp.admin.taobao.org:8000/commoditydog.html?#display01&optTypeCode=2720">IFD规则</a>
+									</dt>
+									<dt class="last" id="navKey_2730">
+										<a href="http://cmp.admin.taobao.org:8000/commoditydog.html?#display03&optTypeCode=2730">实时任务</a>
+									</dt>
+								</dl>
+							</li>
+							<li id="navKey_2800">
+								<a href="http://cmp.admin.taobao.org:8000/commoditydog.html?optTypeCode=2800&#itemrollback">商品回滚</a>
+							</li>
+							<li id="navKey_2900">
+								<a href="http://cmp.admin.taobao.org:8000/commoditydog.html?optTypeCode=2900&#platformReport">商品管理效果监测</a>
+							</li>
+						</ul>
+						<ul class="unstyled">
+							<li id="navKey_3100">
+								<a href="http://tms.taobao.com/daogou/user/application.htm?optTypeCode=3100">站点管理</a>
+							</li>
+							<li id="navKey_3200">
+								<a href="http://baoming.admin.taobao.org/baoming/set_base_info.htm?optTypeCode=3200">活动发起</a>
+							</li>
+							<li id="navKey_3300">
+								<a href="http://baoming.admin.taobao.org/baoming/query_baoming_config.htm?optTypeCode=3300">活动列表</a>
+							</li>
+							<li id="navKey_3400">
+								<a href="http://hermes.daily.taobao.net/?optTypeCode=3400">渠道推广</a>
+							</li>
+						</ul>
+						<ul class="unstyled">
+							<li class="has_third" id="navKey_4100">
+								<span>卖家档案</span>
+								<dl>
+									<dt id="navKey_4110">
+										<a href="http://dangan.taobao.ali.com/v2/index.htm?optTypeCod=4110&vid=po">卖家档案</a>
+									</dt>
+									<dt id="navKey_4120">
+										<a href="http://dangan.taobao.ali.com/v2/rule/my_seller_lists.htm?optTypeCod=4120&vid=po">我的卖家名单</a>
+									</dt>
+									<dt id="navKey_4130">
+										<a href="http://dangan.taobao.ali.com/v2/rule/my_rule_list.htm?optTypeCod=4130&vid=po">我的筛选规则</a>
+									</dt>
+									<dt id="navKey_4140">
+										<a href="http://dangan.taobao.ali.com/v2/rule/eventRecordSend.htm?optTypeCod=4140&vid=po">我的操作记录</a>
+									</dt>
+									<dt id="navKey_4150">
+										<a href="http://dangan.taobao.ali.com/v2/rule/eventRecordReceive.htm?optTypeCod=4150&vid=po">我收到的请求</a>
+									</dt>
+									<dt id="navKey_4160">
+										<a href="http://dangan.taobao.ali.com/v2/filterLibrary.htm?optTypeCod=4160&vid=po">筛选规则库</a>
+									</dt>
+									<!-- <dt><span>黑名单</span></dt>-->
+									<dt id="navKey_4170">
+										<a href="http://dangan.taobao.ali.com/v2/definition/dataDefinitions.htm?optTypeCod=4170&vid=po">数据字典</a>
+									</dt>
+									<dt class="last" id="navKey_4180">
+										<a href="http://dangan.taobao.ali.com/v2/home.htm?optTypeCod=4180&vid=po">帮助</a>
+									</dt>
+								</dl>
+							</li>
+
+							<li id="navKey_4200">
+								<a href="http://seller.admin.taobao.org/xfile/sellerReviewQuery.htm?optTypeCod=4200">卖家准入</a>
+							</li>
+							<li id="navKey_4300">
+								<a href="http://shop.admin.taobao.org/certify/certify.htm?optTypeCod=4300">淘宝认证</a>
+							</li>
+							<li class="has_third" id="navKey_4400">
+								<span>消保管理</span>
+								<dl>
+									<dt id="navKey_4410">
+										<a href="http://trade.admin.taobao.org:9999/prepay/basePrepayServiceQuery.htm?optTypeCod=4410">基本消保服务查询</a>
+									</dt>
+									<dt id="navKey_4420">
+										<a href="http://trade.admin.taobao.org:9999/prepay/seniorPrepayServiceQuery.htm?optTypeCod=4420">高级消保服务查询</a>
+									</dt>
+									<dt id="navKey_4430">
+										<a href="http://trade.admin.taobao.org:9999/prepay/bailManager.htm?optTypeCod=4430">消保保证金管理</a>
+									</dt>
+									<dt id="navKey_4440">
+										<a href="http://trade.admin.taobao.org:9999/prepay/bailRecallList.htm?optTypeCod=4440">保证金催缴单管理</a>
+									</dt>
+									<dt id="navKey_4450">
+										<a href="http://trade.admin.taobao.org:9999/prepay/bailTransfer.htm?optTypeCod=4450">保证金转移单管理</a>
+									</dt>
+									<dt id="navKey_4460">
+										<a href="http://trade.admin.taobao.org:9999/prepay/bailUnFrozen.htm?optTypeCod=4460">保证金解冻单管理</a>
+									</dt>
+									<dt class="last" id="navKey_4470">
+										<a href="http://trade.admin.taobao.org:9999/prepay/managePrepayCategory.htm?optTypeCod=4470">消保类目管理</a>
+									</dt>
+								</dl>
+							</li>
+							<li class="has_third" id="navKey_4500">
+								<span>电子凭证</span>
+								<dl>
+									<dt id="navKey_4510">
+										<a href="http://ma.admin.taobao.org/merchant/seller_list.htm?optTypeCod=4510">商家管理</a>
+									</dt>
+									<dt id="navKey_4520">
+										<a href="http://ma.admin.taobao.org/wangdian/wangdian_list.htm?optTypeCod=4520">网点管理</a>
+									</dt>
+									<dt class="last" id="navKey_4530">
+										<a href="http://ma.admin.taobao.org/wangdian/pos_machine_list.htm?optTypeCod=4530">机具管理</a>
+									</dt>
+								</dl>
+							</li>
+
+						</ul>
+						<ul class="unstyled">
+							<li id="navKey_5100">
+								<a href="http://mckinley.admin.taobao.org/mckinley/auxiliary/listRuleType.htm?optTypeCod=5100">违规类型管理</a>
+							</li>
+							<li id="navKey_5200">
+								<a href="http://mckinley.admin.taobao.org/mckinley/auxiliary/listTemplate.htm?optTypeCod=5200">模板管理</a>
+							</li>
+							<li class="has_third" id="navKey_5300">
+								<span>IFD库</span>
+								<dl>
+									<dt id="navKey_5310">
+										<a href="http://mckinley.admin.taobao.org/mckinley/auction/auctionsupport/commodityDogRedirect.htm?url=http://cmp.admin.taobao.org:8000/commoditydog.html&map=indicator&optTypeCod=5310">IFD指标库</a>
+									</dt>
+									<dt class="last" id="navKey_5320">
+										<a href="http://cmp.admin.taobao.org:8000/commoditydog.html?random=1289977139851&#vocabularyDisplay&optTypeCod=5320">IFD词库</a>
+									</dt>
+								</dl>
+							</li>
+							<li id="navKey_5400">
+								<a href="http://pearl.admin.taobao.org:8080/auctionTag.htm?optTypeCod=5400">商品标签</a>
+							</li>
+							<li id="navKey_5500">
+								<a href="http://pearl.admin.taobao.org:8080/auctionExpand.htm?optTypeCod=5500">商品结构扩展</a>
+							</li>
+							<li id="navKey_5600">
+								<a href="http://pearl.admin.taobao.org:8080/auction/item_rule_manage.htm?optTypeCod=5600">发布规则管理</a>
+							</li>
+						</ul>
+					</div>
+					<ul class="tree-level clearfix unstyled">
+						<li class="first">您所在的位置 ：</li>
+					</ul>
+					<div class="icon-left"></div>
+					<div class="icon-right"></div>
+				</div>
+				<script>
+					KISSY.use('ocp/common/header_nav');
+				</script>
+				<!-- end of tms headNav-->			
+			</div>
+		</div>
+		
+		<!-- end of header vmcommon -->
+		
+		<div id="content" class="clearfix"></div>
+	</body>
+
+	<footer>
+		<div class="footer">
+			
+		</div>
+	</footer>
+
+</html>

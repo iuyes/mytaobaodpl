@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript · OCP Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js" ></script>
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Mytaobao DPL</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+			  <li class="">
+                <a href="./index.html">UI规范</a>
+              </li>
+			  <li class="active">
+                <a href="./javascript.html">JS组件</a>
+              </li>
+              <li class="">
+                <a target="_blank" href="http://www.taobao.com/go/chn/snsdkjs/home.php">SNS-JSSDK</a>
+              </li>
+			  <li class="">
+                <a target="_blank" href="./index.html">HTML规范</a>
+              </li>
+              <li class="">
+                <a target="_blank" href="http://wiki.ued.taobao.net/doku.php?id=team:sns:standard:css">CSS规范</a>
+              </li>
+              <li class="">
+                <a target="_blank" href="http://wiki.ued.taobao.net/doku.php?id=team:sns:demo">DEMO规范</a>
+              </li>
+              <li class="">
+                <a target="_blank" href="http://wiki.ued.taobao.net/doku.php?id=team:sns:standard:json">JSON规范</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+      
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js" ></script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/p/ocp/1.0/index.js" ></script>
+	  <!-- Masthead
+      ================================================== -->
+      <header class="jumbotron subhead" id="overview">
+        <h1>Javascript 控件</h1>
+        <div class="subnav">
+          <ul class="nav nav-pills">
+            <li><a href="#javascript">All plugins</a></li>
+            <li><a href="#tree">Tree</a></li>
+            <li><a href="#treeNode">TreeNode</a></li>
+            <li><a href="#forest">Forest</a></li>
+            <li><a href="#dialogbox">S.Dialogbox</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Using Javascript w/ Bootstrap
+      ================================================== -->
+      <section id="javascript">
+        <div class="page-header">
+          <h1>KISSY Plugins <small>先在页面中外链<code>http://a.tbcdn.cn/p/ocp/1.0/index.js</code>，注意请一定在kissy之后</small></h1>
+        </div>
+      <div class="row">
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#treeNode">TreeNode</a></h3>
+            <p>treeNode 树节点类</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#tree">Tree</a></h3>
+            <p>tree动态树类</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#forest">Forest</a></h3>
+            <p>forest 森林控件，包含树对象序列</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#dialogbox">S.Dialogbox</a></h3>
+            <p>基于KISSY Overlay的二次封装的弹出框插件dialogbox，添加及优化功能：1、增加alert,comfirm提示，2、优化多次new overlay对象。3、简化配置项。4、增加移动端适配。5、简洁的对外接口</p>
+          </label>
+        </div>
+      </div>
+      <div class="alert alert-info"><strong>Heads up!</strong> All javascript plugins require the latest version of jQuery.</div>
+    </section>
+	
+	<!-- TreeNode
+    ================================================== -->
+    <section id="treeNode">
+      <div class="page-header">
+        <h1>TreeNode <small>ocp/treeNode</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About treeNode</h3>
+          <p>tree组件的基础类，代表每个树节点.</p>
+        </div>
+        <div class="span9 columns">
+          <h2>Static Example</h2>
+          <p>Below is a statically rendered modal.</p>
+		 <div class="ocp-overlay" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1; width: 300px; height: 200px">
+			<div style="border: 1px solid #C9C9C9; margin: 0 auto; background-color: white; height: 200px">
+				<div class="ocp-tree">
+					<div class="ocp-tree-item">
+						<div class="ocp-tree-item-title">
+							<span class="ocp-tree-expand-icon ocp-tree-expand-icon-minus ocp-tree-icon"></span>
+							<span class="ocp-tree-check-icon ocp-tree-check-icon-unchecked ocp-tree-icon"></span>
+							<span class="ocp-tree-item-lable">属性一</span>
+						</div>
+						<ul class="ocp-tree-item-children">
+							<li class="ocp-tree-item">
+								<div class="ocp-tree-item">
+									<div class="ocp-tree-item-title">
+										<span class=" ocp-tree-expand-icon-plus ocp-tree-icon"></span>
+										<span class="ocp-tree-check-icon ocp-tree-check-icon-unchecked ocp-tree-icon"></span>
+										<span class="ocp-tree-item-lable">属性值一 一</span>
+									</div>
+								</div>
+							</li>
+							<li class="ocp-tree-item">
+								<div class="ocp-tree-item">
+									<div class="ocp-tree-item-title ocp-tree-item-selected">
+										<span class="ocp-tree-expand-icon ocp-tree-icon ocp-tree-expand-icon-plus"></span>
+										<span class="ocp-tree-check-icon ocp-tree-icon ocp-tree-check-icon-checked"></span>
+										<span class="ocp-tree-item-lable">属性值一 二</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+          </div> 
+          <hr>
+
+          <h2>Using Ocp-TreeNode</h2>
+          <p>Call the Tree via javascript:</p>
+          <pre class="prettyprint linenums">
+KISSY.use('ocp/treeNode', function(S, TreeNode){
+
+	var node= new TreeNode({
+		prefixCls : 'ocp-',
+		container : '#treeContainer',
+		store :store,
+		checkable : true
+	});
+});
+		  </pre>
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 150px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>content</td>
+               <td>string</td>
+               <td>true</td>
+               <td>树节点文本内容</td>
+             </tr>
+             <tr>
+               <td>isLeaf</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>是否为叶子节点，决定该节点是否可展开</td>
+             </tr>
+             <tr>
+               <td>checkable</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>树节点是否可选，默认不可选</td>
+             </tr>
+             <tr>
+               <td>prefixCls</td>
+               <td>string</td>
+               <td>false</td>
+               <td>样式前缀，默认“ocp-”</td>
+             </tr>
+             <tr>
+               <td>id</td>
+               <td>string</td>
+               <td>false</td>
+               <td>节点的唯一标示ID，默认随机生成</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <div class="alert alert-info">
+            <strong>Heads up!</strong> If you want your modal to animate in and out, just add a <code>.fade</code> class to the <code>.modal</code> element (refer to the demo to see this in action) and include bootstrap-transition.js.
+          </div>
+		  
+		  <h3>Propertys</h3>
+          <p>OCP Tree class exposes a few propertys.</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">Event</th>
+               <th>Description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>id</td>
+               <td>树节点ID，只读</td>
+             </tr>
+             <tr>
+               <td>depth</td>
+               <td>树节点的深度，只读</td>
+             </tr>
+             <tr>
+               <td>children</td>
+               <td>子节点，只读，node.children的形式调用</td>
+             </tr>
+             <tr>
+               <td>visible</td>
+               <td>树节点可见状态，可设置</td>
+             </tr>
+             <tr>
+               <td>content</td>
+               <td>树节点的显示内容，可以包含html片段</td>
+             </tr>
+             <tr>
+               <td>dataContent</td>
+               <td>树节点的纯文本内容</td>
+             </tr>
+             <tr>
+               <td>checkState</td>
+               <td>树节点当前选中状态，false: 未选中、true: 已选中</td>
+             </tr>
+            </tbody>
+          </table>
+		  
+          <h3>Methods</h3>
+		  
+          <h4>.addChild(node. needRender)</h4>
+          <p>新增节点对象，建立父子关系. <code>node</code> 插入的节点对象，<code>needRender</code> 是否需要立即渲染DOM默认false.</p>
+		  
+          <h4>.toggleCheck()</h4>
+          <p>节点选中状态切换.</p>
+		  
+          <h4>.toggleExpand()</h4>
+          <p>节点收起展开状态切换</p>
+		  
+          <h4>.expand()</h4>
+          <p>节点展开</p>
+		  
+          <h4>.collapse()</h4>
+          <p>节点收起</p>
+		  
+          <h4>.findNode(attr, value, fn)</h4>
+          <p>查找符合匹配条件的子节点. <code>attr</code> 查询的节点属性.<code>value</code> 匹配值.<code>fn</code> 匹配时所做的操作，参数为节点对象node.</p>
+		  
+          <h4>.cascade(fn, scope)</h4>
+          <p>中序遍历遍历所有子节点. <code>fn</code>遍历函数 返回值为false则继续循环遍历，True则终止循环，参数为当前节点对象</p>
+		  
+          <h4>.destroy()</h4>
+          <p>摧毁节点的所有DOM引用以及对象引用，并摧毁子节点</p>
+		  
+        </div>
+      </div>
+    </section>
+
+    <!-- Tree
+    ================================================== -->
+    <section id="tree">
+      <div class="page-header">
+        <h1>Tree <small>ocp/tree</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About tree</h3>
+          <p>A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.</p>
+          <a href="assets/js/bootstrap-modal.js" target="_blank" class="btn">Download file</a>
+        </div>
+        <div class="span9 columns">
+          <h2>Example Demo</h2>
+          <p>Below is a statically rendered modal.</p>
+		 <div class="ocp-overlay" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1; width: 300px; height: 200px">
+			<div style="border: 1px solid #C9C9C9; margin: 0 auto; background-color: white; height: 200px" id="treeContainer">
+			</div>
+          </div> 
+		 <script>
+			(function(S){
+				S.use('ocp/tree, ocp/store', function(S, Tree, Store){
+					var store = new Store({
+						"data" : [{
+								"content" : '属性一',
+								"isLeaf" : false,
+								"children" : [
+									{
+										"content" : '属性值一 一'
+									},
+									{
+										"content" : '属性值一 二',
+										"isLeaf" : false,
+										"children" : [
+											{
+												"content" : '属性值'
+											},
+											{
+												"content" : '属性值'
+											}
+										]
+									}
+								]
+							},
+							{
+								"urlParam" : "1512:21514",
+								"content" : '属性值二',
+								"isLeaf" : false
+							}
+						]
+					});
+					var tree = new Tree({
+						prefixCls : 'ocp-',
+						container : '#treeContainer',
+						store :store,
+						checkable : true
+					});
+					//tree.render();
+					store.load();
+				});
+			})(KISSY);
+		 </script>
+          <hr>
+
+          <h2>Using Ocp-Tree</h2>
+          <p>Call the Tree via javascript:</p>
+          <pre class="prettyprint linenums">
+KISSY.use('ocp/tree, ocp/store', function(S, Tree, Store){
+	var store = new Store({
+		//"url" : 'treeJosn.html',
+		"data" : [
+			{
+				"content" : '属性一',
+				"isLeaf" : false,
+				"children" : [
+					{
+						"content" : '属性值一 一'
+					},
+					{
+						"content" : '属性值一 二',
+						"isLeaf" : false,
+						"children" : [
+							{
+								"content" : '属性值'
+							},
+							{
+								"content" : '属性值'
+							}
+						]
+					}
+				]
+			},
+			{
+				"content" : '属性值二',
+				"isLeaf" : false
+			}
+		]
+	});
+	var tree = new Tree({
+		prefixCls : 'ocp-',
+		container : '#treeContainer',
+		store :store,
+		checkable : true
+	});
+	tree.render();
+	//store.load();
+});
+		  </pre>
+		  <h3>Json Data Format</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 150px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>content</td>
+               <td>string</td>
+               <td>true</td>
+               <td>节点的文本内容</td>
+             </tr>
+             <tr>
+               <td>isLeaf</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>节点是否叶子节点，绝对该节点是否可展开</td>
+             </tr>
+             <tr>
+               <td>children</td>
+               <td>node json data</td>
+               <td>true</td>
+               <td>子节点JSON数组</td>
+             </tr>
+             <tr>
+               <td>checkable</td>
+               <td>boolean </td>
+               <td>false</td>
+               <td>节点是否可选，默认false 不可选</td>
+             </tr>
+             <tr>
+               <td>id</td>
+               <td>string </td>
+               <td>false</td>
+               <td>节点ID，可以不提供，默认随机生成</td>
+             </tr>
+            </tbody>
+          </table>
+          <div class="alert alert-info">
+            <strong>Heads up!</strong> 构造树的Json数据格式，除了以上关键属性以外，可以任意添加其他属性，会自动mixin Node对象中，作为扩展属性使用
+          </div>
+		  
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 150px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>container</td>
+               <td>html el or selector</td>
+               <td>true</td>
+               <td>需要渲染树控件的容器DOM节点</td>
+             </tr>
+             <tr>
+               <td>store</td>
+               <td>ocp store </td>
+               <td>true</td>
+               <td>数据模型对象，包含树的初始数据或者可异步访问的URL</td>
+             </tr>
+             <tr>
+               <td>data</td>
+               <td>json object</td>
+               <td>true</td>
+               <td>树的初始数据，和Store二选其一</td>
+             </tr>
+             <tr>
+               <td>beforeRender</td>
+               <td>function</td>
+               <td>false</td>
+               <td>每个树节点渲染之前调用，参数为节点内容和节点对象</td>
+             </tr>
+             <tr>
+               <td>checkable</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>树是否可勾选，默认为false</td>
+             </tr>
+             <tr>
+               <td>prefixCls</td>
+               <td>string</td>
+               <td>false</td>
+               <td>样式前缀，默认为<code>ocp-</code></td>
+             </tr>
+             <tr>
+               <td>id</td>
+               <td>string</td>
+               <td>false</td>
+               <td>树的唯一标示ID，默认随机生成</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>Methods</h3>
+		  
+          <h4>.render()</h4>
+          <p>当一棵树内部数据，或所有节点关系更新以后，将树渲染到DOM中</p>
+		  <pre class="prettyprint linenums">tree.render()</pre>
+		  
+          <h4>.findNode(attr, value)</h4>
+          <p>根据相应属性匹配规则,查找节点.<code>attr</code>:树节点的属性;<code>value</code>:属性的值;</p>
+          <p>返回查找到的树节点对象</p>
+          <pre class="prettyprint linenums">tree.findNode('id', '29803')</pre>
+		  
+          <h4>.filter(fn)</h4>
+          <p>根据相应匹配规则过滤节点，隐藏过滤掉的节点. <code>fn</code>:遍历每个节点时调用回调函数，参数为节点对象，返回<code>true</code><code>false</code>来设置该节点是否可见</p>
+		  
+<pre class="prettyprint linenums">
+tree.filter(function(node){
+	node.set('conent', 'matched!')
+	return true;
+})</pre>
+
+          <h4>.destroy()</h4>
+          <p>消耗树中所有节点</p>
+
+          <h4>.getCheckedNodes()</h4>
+          <p>取得所有被勾选的节点.</p>
+          <pre class="prettyprint linenums">tree.getCheckedNodes()</pre>
+		  
+          <h4>.getSelectedNode()</h4>
+          <p>取得被选中的节点.</p>
+          <pre class="prettyprint linenums">tree.getSelectedNode()</pre>
+		  
+          <h3>Events</h3>
+          <p>OCP Tree class exposes a few events for hooking into modal functionality.</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">Event</th>
+               <th>Description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>click</td>
+               <td>树节点click时触发，被点击的节点对象混入<code>event对象<code></td>
+             </tr>
+             <tr>
+               <td>nodeCheck</td>
+               <td>树节点勾选时触发，被勾选的节点对象混入<code>event对象<code></td>
+             </tr>
+             <tr>
+               <td>nodeToggle</td>
+               <td>树节点展开收起状态改变时触发，树节点对象混入<code>event对象<code></td>
+             </tr>
+            </tbody>
+          </table>
+
+<pre class="prettyprint linenums">
+tree.on('click', function (e) {
+	var node = e.node;
+  // do something…
+})</pre>
+        </div>
+      </div>
+    </section>
+	
+    <!-- Forest
+    ================================================== -->
+    <section id="forest">
+      <div class="page-header">
+        <h1>Forest <small>ocp/forest</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About Forest</h3>
+          <p>森林控件，包含多个树，并具备左右轮播的动画效果.</p>
+        </div>
+        <div class="span9 columns">
+          <h2>Example Demo</h2>
+          <p>Below is a statically rendered modal.</p>
+		 <div class="ocp-overlay" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1; width: 800px; height: 450px">
+			<div style="margin: 0 auto; padding: 0 20px; height: 450px" id="forestContent">
+			</div>
+          </div> 
+		 <script>
+			(function(S){
+				S.use('ocp/forest, ocp/store', function(S, Forest, Store){
+					var catStore = new Store({
+						"data" : [{
+								"content" : '属性一',
+								"isLeaf" : false,
+								"children" : [
+									{
+										"content" : '属性值一 一'
+									},
+									{
+										"content" : '属性值一 二',
+										"isLeaf" : false,
+										"children" : [
+											{
+												"content" : '属性值'
+											},
+											{
+												"content" : '属性值'
+											}
+										]
+									}
+								]
+							},
+							{
+								"urlParam" : "1512:21514",
+								"content" : '属性值二',
+								"isLeaf" : false
+							}
+						]
+					});
+					forest = new Forest({
+						prefixCls : 'ocp-',
+						width : 250,
+						margin : 4,
+						container : '#forestContent',
+						store :catStore
+					});
+					
+					forest.on('click', function(e){
+						var id = e.treeId,
+							node = e.node,
+							// 取得节点的附加数据
+							cpv = node.get('urlParam'),
+							isleaf = node.get('isleafCat');
+
+						// 先销毁后面的树
+						this.destroyAllTree(id);
+						this.createNewTree(catStore, true);
+					});
+				});
+			})(KISSY);
+		 </script>
+          <hr>
+
+          <h2>Using Ocp-Tree</h2>
+          <p>Call the Tree via javascript:</p>
+          <pre class="prettyprint linenums">
+KISSY.use('ocp/forest, ocp/store', function(S, Forest, Store){
+	var store = new Store({
+		"url" : 'firstCategoryJson.html'
+	});
+	forest = new Forest({
+		prefixCls : 'ocp-',
+		width : 250,
+		margin : 4,
+		container : '#forestContent',
+		store :catStore
+	});
+	catStore.load();
+	
+	forest.on('click', function(e){
+		var id = e.treeId,
+			node = e.node,
+			// 取得节点的附加数据
+			cpv = node.get('urlParam'),
+			isleaf = node.get('isleafCat');
+
+		// 先销毁后面的树
+		this.destroyAllTree(id);
+		this.createNewTree(catStore, true);
+		catStore.load();
+	});
+});
+		  </pre>
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 150px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>container</td>
+               <td>html el or selector</td>
+               <td>true</td>
+               <td>需要渲染森林控件的容器DOM节点</td>
+             </tr>
+             <tr>
+               <td>store</td>
+               <td>ocp store </td>
+               <td>true</td>
+               <td>数据模型对象，包含森林中第一颗树的初始数据或者可异步访问的URL</td>
+             </tr>
+             <tr>
+               <td>width</td>
+               <td>number</td>
+               <td>true</td>
+               <td>单颗树的宽度</td>
+             </tr>
+             <tr>
+               <td>height</td>
+               <td>number</td>
+               <td>true</td>
+               <td>单颗树的高度</td>
+             </tr>
+             <tr>
+               <td>treeNum</td>
+               <td>number</td>
+               <td>false</td>
+               <td>森林可视区域显示的树个数，默认3</td>
+             </tr>
+             <tr>
+               <td>prefixCls</td>
+               <td>string</td>
+               <td>false</td>
+               <td>样式前缀，默认为<code>ocp-</code></td>
+             </tr>
+             <tr>
+               <td>placeholder</td>
+               <td>string</td>
+               <td>false</td>
+               <td>搜索输入框的placeholder 默认（输入关键字）</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <div class="alert alert-info">
+            <strong>Heads up!</strong> If you want your modal to animate in and out, just add a <code>.fade</code> class to the <code>.modal</code> element (refer to the demo to see this in action) and include bootstrap-transition.js.
+          </div>
+          <h3>Methods</h3>
+		  
+          <h4>.createNewTree(store, checkable)</h4>
+          <p>创建新树对象，追加至森林结尾。<code>store</code>树的数据模型对象，<code>checkable</code>树是否可选，默认不可选</p>
+		  
+          <h4>.destroyTree(index)</h4>
+          <p>摧毁森林中指定的树对象.<code>index</code>: 森林中树序列的数组序号;</p>
+		  
+          <h4>.destroyAllTree(startId)</h4>
+          <p>毁指定索引开始之后的所有树对象. <code>startId</code>:树在森林中的唯一标示符</p>
+
+          <h4>.getTrees()</h4>
+          <p>取得森林中的树对象数组</p>
+		  
+          <h3>Events</h3>
+          <p>OCP Tree class exposes a few events for hooking into modal functionality.</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">Event</th>
+               <th>Description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>click</td>
+               <td>点击森林中任何一颗树时触发，事件处理方式同Tree控件Click事件<code>treeId</code>被点击的树对象的唯一标示符也混入Event对象</td>
+             </tr>
+            </tbody>
+          </table>
+<pre class="prettyprint linenums">
+forest.on('click', function (e) {
+	var node = e.node,
+		id = e.treeId;
+  // do something…
+})</pre>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- S.Dialogbox 
+    ================================================== -->
+    <section id="dialogbox">
+      <div class="page-header">
+        <h1>S.Dialogbox <small>ocp/dialogbox.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About S.Dialogbox</h3>
+            <p>基于KISSY Overlay的二次封装的弹出框插件dialogbox，添加及优化功能：1、增加alert,comfirm提示，2、优化多次new overlay对象。3、简化配置项。4、增加移动端适配。5、简洁的对外接口</p>
+          <a href="assets/js/dialogbox.js" target="_blank" class="btn">Download file</a>
+        </div>
+        <div class="span9 columns">
+          <h2>Static S.Dialogbox.alert/S.Dialogbox.confirm example</h2>
+          <div class="well modal-example" style="background-color: #888; border: none;padding:10px 0">
+            <div class="modal" style="position: relative;width:400px; top: auto; left: auto; margin: 0 auto; z-index: 1; max-width: 100%;">
+			   <div style="z-index: 9999;position:static;visibility: visible;" class="ks-dialog ks-overlay ks-ext-position">
+				<div class="ks-contentbox ">
+					<div class="ks-stdmod-header">
+						提示框
+					</div>
+					<div class="ks-stdmod-body">
+						随便写点啥
+						<p>
+							123455
+						</p>
+					</div>
+					<div class="ks-stdmod-footer">
+						<div class="btn-wrap">
+							<button class="btn okbtn">
+								确定
+							</button>
+						</div>
+					</div>
+				</div>
+				<a class="ks-ext-close" role="button" href="javascript:void(&quot;关闭&quot;)" tabindex="0">
+					<span class="ks-ext-close-x">
+						关闭
+					</span>
+				</a>
+			</div> 
+			</div>
+          </div> <!-- /well -->
+          <h2>Static S.Dialogbox.box example</h2>
+          <div class="well modal-example" style="background-color: #888; border: none;padding:10px 0">
+            <div class="modal" style="position: relative;width:500px; top: auto; left: auto; margin: 0 auto; z-index: 1; max-width: 100%;">
+			<div class="ocp-overlay ocp-dialog ocp-ext-position" id="J_Dialog" style="z-index: 9999;position:static;visibility: visible;top:0px"><div class="ocp-contentbox ">
+			<div class="ocp-stdmod-header"></div>
+			<div>
+				<table class="table table-bordered table-striped" style="width:98%">
+					<thead>
+						<tr>
+							<th>属性名称</th>
+							<th>别名</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>名字</td>
+							<td>别名</td>
+						</tr>
+						<tr>
+							<td>名字</td>
+							<td>别名</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="ocp-stdmod-body"></div><div class="ocp-stdmod-footer"><div class="btn-wrap"><button class="btn btn-emphasize okbtn">撤销禁止</button> <button class="btn nobtn">取消</button></div></div></div><a class="ocp-ext-close" role="button" href="javascript:void(&quot;关闭&quot;)" tabindex="0"><span class="ocp-ext-close-x">关闭</span></a></div>
+			</div>
+          </div> <!-- /well -->
+
+          <h2>Live demo</h2>
+			<button id="alert" class="btn">最简单的alert</button>
+			<button id="confirm" class="btn">最简单的confirm</button>
+			<button id="alertCall" class="btn">带回调函数alert</button>
+			<button id="confirmCall" class="btn">带回调函数confirm</button>
+			<button id="diy" class="btn">自定义弹框</button><br />
+			<button id="drag" class="btn">可拖拽弹框</button>
+			<button id="resize" class="btn">可以改变大小</button>
+			<br />
+			<a class="btn box">多处box点击一</a>
+			<a class="btn box">多处box点击二</a>
+			<a class="btn box">多处box点击三</a>
+			<br />
+			<a class="btn pop">多处自定义点击一</a>
+			<a class="btn pop">多处点击二</a>
+			<a class="btn pop">多处点击三</a>
+			<br />
+			<div id="J_Dialogbox" class="ocp-overlay" >
+				<div>
+					自定义弹出层
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>标题</th>
+								<th>标题</th>
+								<th>标题</th>
+								<th>标题</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>格子1</td>
+								<td>格子2</td>
+								<td>格子2</td>
+								<td>格子2</td>
+							</tr>
+							<tr>
+								<td>格子1</td>
+								<td>格子2</td>
+								<td>格子2</td>
+								<td>格子2</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>       
+		  <hr/>
+          <h2>Using S.Dialogbox.box</h2>
+          <p>通过S.Dialogbox声明一个dialogbox实例,建议使用box方法，多次使用不会多次声明实例</p>
+          <pre class="prettyprint linenums">S.Dialogbox.box(msg,callback,options)</pre>
+          <pre class="prettyprint linenums">new S.Dialogbox.(options) //裸声明</pre>
+          <h3>options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>clickNode</td>
+               <td>string</td>
+               <td>空</td>
+               <td>绑定Dom节点的click事件，支持selector绑定</td>
+             </tr>
+             <tr>
+               <td>srcNode</td>
+               <td>string</td>
+               <td>空</td>
+               <td>用于取悬浮层根节点, 可为”#id”或”.class”. 当不设置时表示新建一个 HTMLElement 插入到页面中.初始 srcNode 不能设置为 display:none ，需要设置为 position:absolute;left:-9999px;top:-9999px</td>
+             </tr>
+             <tr>
+               <td>head</td>
+               <td>string</td>
+               <td>空</td>
+               <td>头部html内容设置</td>
+             </tr>
+             <tr>
+               <td>body</td>
+               <td>string</td>
+               <td>空</td>
+               <td>主体内容html设置</td>
+             </tr>
+             <tr>
+               <td>foot</td>
+               <td>string</td>
+               <td>空</td>
+               <td>底部内容html设置</td>
+             </tr>
+             <tr>
+               <td>mask</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>是否带有遮罩 </td>
+             </tr>
+             <tr>
+               <td>onload</td>
+               <td>function</td>
+               <td>不执行</td>
+               <td>初始化完成后的回调，在render后立即执行</td>
+             </tr>
+             <tr>
+               <td>resize</td>
+               <td>Object</td>
+               <td>null</td>
+               <td>开启可缩放并设置可缩放参数</td>
+             </tr>
+             <tr>
+               <td>draggable</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>是否可拖拽</td>
+             </tr>
+             <tr>
+               <td>prefixCls</td>
+               <td>function</td>
+               <td>string</td>
+               <td>默认为”ks-”, 样式类名前缀, 如悬浮层根元素会加上样式类：”ks-overlay”. kissy 1.2 版本以前设置无效, 都为 “ks-”</td>
+             </tr>
+            </tbody>
+          </table>
+		  <hr>
+
+          <h2>Using S.Dialogbox.alert</h2>
+          <p>Call the S.Dialogbox.alert via javascript:</p>
+          <pre class="prettyprint linenums">S.Dialogbox.alert(body,callback,options)</pre>
+          <h3>body</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>body</td>
+               <td>string</td>
+               <td>空</td>
+               <td>设置S.Dialogbox的body配置项，options中如果设置会覆盖msg参数</td>
+             </tr>
+            </tbody>
+          </table>
+          <h3>callback</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>callback</td>
+               <td>function</td>
+               <td>可选</td>
+               <td>客户端回调函数</td>
+             </tr>
+            </tbody>
+          </table>
+          <h3>Options</h3>
+		  <p>可选，新增参数如下，其余与S.Dialogbox的options相同</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>title</td>
+               <td>string</td>
+               <td>提示框</td>
+               <td>设置提示框的head内容</td>
+             </tr>
+            </tbody>
+          </table>
+          <h2>Using S.Dialogbox.confirm</h2>
+          <p>Call the S.Dialogbox.confirm via javascript:</p>
+          <pre class="prettyprint linenums">S.Dialogbox.confirm(body,callback,options)</pre>
+          <h3>body</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>body</td>
+               <td>string</td>
+               <td>空</td>
+               <td>设置S.Dialogbox的body配置项，options中如果设置会覆盖msg参数</td>
+             </tr>
+            </tbody>
+          </table>
+          <h3>callback</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>callback</td>
+               <td>function</td>
+               <td>不执行</td>
+               <td>客户端点击确定按钮后回调函数</td>
+             </tr>
+            </tbody>
+          </table>
+          <h3>Options</h3>
+		  <p>新增参数如下，其余与S.Dialogbox的options相同</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>title</td>
+               <td>string</td>
+               <td>提示框</td>
+               <td>设置提示框的head内容</td>
+             </tr>
+             <tr>
+               <td>yesCallback</td>
+               <td>function</td>
+               <td>不执行</td>
+               <td>按钮是的回调</td>
+             </tr>
+             <tr>
+               <td>noCallback</td>
+               <td>function</td>
+               <td>不执行</td>
+               <td>按钮否的回调</td>
+             </tr>
+             <tr>
+               <td>yesTxt</td>
+               <td>string</td>
+               <td>是</td>
+               <td>设置按钮是的文本内容</td>
+             </tr>
+             <tr>
+               <td>noTxt</td>
+               <td>string</td>
+               <td>否</td>
+               <td>设置按钮否的文本内容</td>
+             </tr>
+            </tbody>
+          </table>
+          <h3>Methods</h3>
+          <p>显示dialogbox弹出框</p>
+          <h4>.show()</h4>
+<pre class="prettyprint linenums">
+var dialogbox = S.Dialogbox(options);
+dialogbox.show()</pre>
+          <h4>.hide()</h4>
+          <p>隐藏弹出层</p>
+          <pre class="prettyprint linenums">dialogbox.hide()</pre>
+          <h3>Attributes</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">Name</th>
+               <th>Description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>isTouch</td>
+               <td>是否支持触屏，移动端设置</td>
+             </tr>
+             <tr>
+               <td>header</td>
+               <td>获取设置头部内容</td>
+
+             </tr>
+             <tr>
+               <td>bodyer</td>
+               <td>获取设置主体内容</td>
+             </tr>
+             <tr>
+               <td>footer</td>
+               <td>获取设置尾部内容</td>
+             </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+<script type="text/javascript" src="http://a.tbcdn.cn/p/ocp/1.0/index.js" ></script>
+<script>
+KISSY.use('ocp/dialogbox.css,resizable,ocp/dialogbox',function(S){
+	var $ = S.all;
+	//简单alert
+	$('#alert').on('click',function(ev){
+		S.Dialogbox.alert('随便写点啥<p>123455</p>');
+	})
+
+	//简单confirm
+	$('#confirm').on('click',function(ev){
+		S.Dialogbox.confirm('随便写点啥<p>123455</p>');
+	})
+
+	//回调alert
+	$('#alertCall').on('click',function(ev){
+		S.Dialogbox.alert('第二次提示内容',function(){
+			alert('ok');
+		},{
+			title:'自定义标题',
+			onload:function(){alert('我加载完了')}
+		});
+	})
+	
+	//回调confirm
+	$('#confirmCall').on('click',function(ev){
+		S.Dialogbox.confirm('confirm弹出框',function(){
+			alert('哦 是的');
+		},{
+		noCallback:function(){
+			alert('哦 不要')
+		},
+		yesTxt:'确定',
+		noTxt:'取消'
+		})
+	})
+
+	//自定义弹出
+	new S.Dialogbox({
+		width:400,
+		srcNode: '#J_Dialogbox',
+		prefixCls: 'ocp-',
+		clickNode: '#diy',
+		yesCallback:function(){
+			alert('hello');
+		}
+	})
+
+	//多处点击支持选择器
+	var pop = new S.Dialogbox({
+			width:400,
+			head:'自定义弹出层',
+			prefixCls: 'ocp-',
+			clickNode:'.pop'
+		})
+	$('.pop').on('click',function(ev){
+		pop.set('bodyer',ev.target.text)
+	})
+	pop.on('yesCallback',function(ev){//事件重设置
+		alert('事件重新设置');		
+		return true;
+	})
+	
+	//S.Dialogbox.box()基本弹出层设置，默认按钮为确定，取消	
+	$('.box').on('click',function(ev){
+		S.Dialogbox.box(ev.currentTarget.text,function(){
+				S.Dialogbox.alert(ev.currentTarget.text);
+				return false;
+			},{
+			head:'这是标题',
+			prefixCls:'ocp-'
+		})
+	})
+	//可拖拽	
+	$('#drag').on('click',function(ev){
+		S.Dialogbox.alert('我可拖拽哦',null,{
+			draggable:true
+		})
+	})
+	//可改变大小	
+	$('#resize').on('click',function(ev){
+		S.Dialogbox.alert('我可缩放哦',null,{
+			resize:{// 可缩放大小, 并设置最小宽度/最小高度/缩放位置
+				minWidth:150,
+				minHeight:70,
+				handlers:["b","t","r","l","tr","tl","br","bl"]
+			}
+		})
+	})
+})
+</script>
+    </section>
+
+
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+  </body>
+</html>
