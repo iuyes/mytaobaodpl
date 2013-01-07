@@ -2,7 +2,7 @@
 var hogan = require('hogan.js')
   , fs    = require('fs')
   , prod  = process.argv[2] == 'production'
-  , title = 'OCP Bootstrap'
+  , title = 'MytaobaoDPL'
 
 var layout, pages
 
