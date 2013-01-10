@@ -13,7 +13,7 @@
   .ie7-inline-block();
   margin-bottom: 0; // For input.btn
   font-size: @baseFontSize;
-  line-height: @baseLineHeight - 2px;
+  line-height: @baseLineHeight + 2px;
   *line-height: 20px;
   color: @grayDark;
   text-align: center;
@@ -22,7 +22,7 @@
   border: 1px solid @btnBorder;
   .buttonBackground(@btnBackground, @btnBackgroundHighlight);
   *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  .border-radius(1px);
+  .border-radius(2px);
   .ie7-restore-left-whitespace(); // Give IE7 some love
   .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 }
@@ -34,7 +34,6 @@
   color: @grayDark;
   text-decoration: none;
   background-color: darken(@white, 10%);
-  *background-color: darken(@white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
   background-position: 0 -15px;
 
   // transition is only when going to hover, otherwise the background
@@ -73,13 +72,12 @@
 
 // normal
 .btn {
-	padding:7px 12px;
+	padding:2px 12px;
 }
 // Large
 .btn-large {
   font-size: @baseFontSize + 2px;
-  .border-radius(1px);
-  padding:10px 12px;
+  padding:5px 12px;
 }
 .btn-large [class^="icon-"] {
   margin-top: 1px;
@@ -88,8 +86,8 @@
 // Small
 .btn-small {
   font-size: @baseFontSize;
-  line-height: @baseLineHeight - 2px;
-  padding: 4px 12px 4px;
+  line-height: @baseLineHeight + 2px;
+  padding: 0px 12px;
 }
 .btn-small [class^="icon-"] {
   margin-top: -1px;
@@ -98,9 +96,18 @@
 
 // Alternate buttons
 // --------------------------------------------------
+.btn-base {
+	background:@grayLighter;
+	border:1px solid #d2d2d2;
+}
+.btn-base :hover {
+	background:@grayLighter;
+}
 
 // Set text color
 // -------------------------
+.btn-aid,
+.btn-aid:hover,
 .btn-primary,
 .btn-primary:hover,
 .btn-warning,
@@ -114,10 +121,9 @@
 .btn-inverse,
 .btn-inverse:hover {
   color: @white;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
 // Provide *some* extra contrast for those who can get it
-.btn-primary.active,
+.btn-aid.active,
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
@@ -128,8 +134,21 @@
 
 // Set the backgrounds
 // -------------------------
+.btn-aid {
+  .buttonBackground(@btnAidBackground, @btnAidBackgroundHighlight);
+  border:1px solid #2d53af;
+}
+.btn-aidb {
+  background:@btnAidBackground;
+  border:none;
+}
 .btn-primary {
   .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  border:1px solid #992a1b;
+}
+.btn-primaryb {
+  background:@btnPrimaryBackground;
+  border:none;
 }
 // Warning appears are orange
 .btn-warning {

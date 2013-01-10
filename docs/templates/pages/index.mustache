@@ -1,58 +1,18 @@
 <!-- Masthead
 ================================================== -->
 <header class="jumbotron subhead" id="overview">
-  <h1>{{_i}}Base CSS{{/i}}</h1>
+  <h1>{{_i}}UI Base{{/i}}</h1>
   <div class="subnav" id="J_SubNav">
     <ul class="nav nav-pills">
-      <li><a href="#colors">{{_i}}Colors{{/i}}</a></li>
       <li><a href="#buttons">{{_i}}Buttons{{/i}}</a></li>
+      <li><a href="#colors">{{_i}}Colors{{/i}}</a></li>
       <li><a href="#icons">{{_i}}Icons{{/i}}</a></li>
-      <li><a href="#alert">{{_i}}Alert{{/i}}</a></li>
-      <li><a href="#bubble">{{_i}}Bubble{{/i}}</a></li>
-      <li><a href="#tags">{{_i}}Tags{{/i}}</a></li>
+      <li><a href="#tips">{{_i}}tips{{/i}}</a></li>
       <li><a href="#tab">{{_i}}Tab{{/i}}</a></li>
-      <li><a href="#header">{{_i}}Header{{/i}}</a></li>
     </ul>
   </div>
 </header>
 
-<!-- Colors 
-================================================== -->
-<section id="colors">
-    <div class="page-header">
-        <h2>Colors</h2>
-    </div>
-
-    <div class="row">
-        <div class="span6 inline-list-wrap">
-			<h2>字体灰度颜色</h2>
-			<p>黑色<code>.color-black</code>比较暗灰色<code>.color-darker</code>暗灰色<code>.color-graydark</code>灰色<code>.color-gray</code>亮灰色<code>.color-graylight</code>较灰色<code>.color-graylighter</code>白色<code>.color-white</code></p>
-            <ul>
-                <li class="color-black">文本文本文本本文本 </li>
-                <li class="color-graydarker">文本文本文本文本本 </li>
-                <li class="color-graydark">文本文本本文本文本 </li>
-                <li class="color-gray">文本文本文本文本本 </li>
-                <li class="color-graylight">文本文本本文本文本 </li>
-                <li class="color-graylighter">文本文本文本文本本 </li>
-                <li class="color-white" style="background:#000">文本文本文本文本本 </li>
-            </ul>
-        </div>
-		<div class="span6 inline-list-wrap">
-			<h2>字体强调的颜色</h2>
-			<p>蓝色<code>.color-blue</code>深蓝色<code>.color-blueDark</code>绿色<code>.color-green</code>红色<code>.color-red</code>黄色<code>.color-yellow</code>橙色<code>.color-orange</code>粉色<code>.color-pink</code>紫色<code>.color-purple</code></p>
-			<ul>
-                <li class="color-blue">文本文本文本本文本</li>
-                <li class="color-blueDark">文本文本文本文本本</li>
-                <li class="color-green">文本文本本文本文本</li>
-                <li class="color-red">文本文本文本文本本</li>
-                <li class="color-yellow">文本文本本文本文本</li>
-                <li class="color-orange">文本文本文本文本本</li>
-                <li class="color-pink">文本文本文本文本本</li>
-                <li class="color-purple">文本文本文本文本本</li>
-			</ul>
-		</div>
-    </div>
-</section>
 
 <!-- Buttons
 ================================================== -->
@@ -63,18 +23,34 @@
 
     <div class="row">
         <div class="span3">
-            <h3>加关注按钮视觉规范</h3>
-			<p class="demo-ui"><a href="http://img02.taobaocdn.com/tps/i2/T1e.wTXaFXXXcyLIn6-1060-674.png" target="_blank"><img src="http://img02.taobaocdn.com/tps/i2/T1e.wTXaFXXXcyLIn6-1060-674.png_200x200.jpg"/></a></p>
+            <h3>基本按钮视觉规范</h3>
+			<p class="demo-ui"><a href="http://img04.taobaocdn.com/tps/i4/T1m4.SXjXaXXa34Grq-782-656.png" target="_blank"><img src="http://img04.taobaocdn.com/tps/i4/T1m4.SXjXaXXa34Grq-782-656.png_200x200.jpg"/></a></p>
         </div>
         <div class="span9">
-            <h3></h3>
-            <p><code>btn-emphasize</code>和主要操作样式<code>btn-normal</code>其他按钮样式保留</p>
-            <div>
-                <p><a class="btn btn-small btn-emphasize">这是强调按钮</a></p>
-                <p><a class="btn btn-large btn-emphasize">这是强调按钮</a></p>
-                <p><a class="btn btn-small btn-normal">这是主要操作按钮</a></p>
-                <p><a class="btn btn-large btn-normal">这是主要操作按钮</a></p>
-            </div>
+            <h3>DEMO SHOW</h3>
+            <p>class定义：<code>btn-small</code>、<code>btn</code>、<code>btn-large</code></p>
+			  <div class="bs-docs-example">
+				<ul class="inline-list">
+					<li><a class="btn-small btn-base">基本</a></li>
+					<li><a class="btn btn-base">基本</a></li>
+					<li><a class="btn btn-base">基本按钮</a></li>
+					<li><a class="btn-large btn-base">基本按钮</a></li>
+					<li>纯色背景按钮，轻量化场景应用</li>
+				</ul>
+				<ul class="inline-list">
+					<li><a class="btn-small">基本</a></li>
+					<li><a class="btn">基本</a></li>
+					<li><a class="btn">基本按钮</a></li>
+					<li><a class="btn-large">基本按钮</a></li>
+					<li>渐变色突出按钮，视觉强调些</li>
+				</ul>
+			  </div>
+<pre class="prettyprint linenums">
+&lt;button class="btn-small" type="button"&gt;{{_i}}基本{{/i}}&lt;/button&gt;
+&lt;button class="btn" type="button"&gt;{{_i}}基本{{/i}}&lt;/button&gt;
+&lt;button class="btn" type="button"&gt;{{_i}}基本按钮{{/i}}&lt;/button&gt;
+&lt;button class="btn-large" type="button"&gt;{{_i}}基本按钮{{/i}}&lt;/button&gt;
+</pre>
         </div>
     </div>
     <div class="row">
@@ -83,36 +59,30 @@
 			<p class="demo-ui"><a href="http://img03.taobaocdn.com/tps/i3/T1NuASXh0cXXa34Grq-782-656.png" target="_blank"><img src="http://img03.taobaocdn.com/tps/i3/T1NuASXh0cXXa34Grq-782-656.png_200x200.jpg"/></a></p>
         </div>
         <div class="span9">
-            <h3></h3>
-            <p>OCP添加了强调样式<code>btn-emphasize</code>和主要操作样式<code>btn-normal</code>其他按钮样式保留</p>
-            <div>
-                <p><a class="btn btn-small btn-emphasize">这是强调按钮</a></p>
-                <p><a class="btn btn-large btn-emphasize">这是强调按钮</a></p>
-                <p><a class="btn btn-small btn-normal">这是主要操作按钮</a></p>
-                <p><a class="btn btn-large btn-normal">这是主要操作按钮</a></p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span3">
-            <h3>基本按钮视觉规范</h3>
-			<p class="demo-ui"><a href="http://img04.taobaocdn.com/tps/i4/T1m4.SXjXaXXa34Grq-782-656.png" target="_blank"><img src="http://img04.taobaocdn.com/tps/i4/T1m4.SXjXaXXa34Grq-782-656.png_200x200.jpg"/></a></p>
-        </div>
-        <div class="span9">
             <h3>DEMO SHOW</h3>
-            <p>class定义：<code>btn-small</code>、<code>btn</code>、<code>btn-large</code></p>
-            <ul class="inline-list">
-                <li><a class="btn-small">基本</a></li>
-                <li><a class="btn">基本</a></li>
-                <li><a class="btn">基本按钮</a></li>
-                <li><a class="btn-large">基本按钮</a></li>
-            </ul>
-            <ul class="inline-list">
-                <li><a class="btn-small">基本</a></li>
-                <li><a class="btn">基本</a></li>
-                <li><a class="btn">基本按钮</a></li>
-                <li><a class="btn-large">基本按钮</a></li>
-            </ul>
+            <p>满足基本btn的样式下增加class定义：<code>btn-primary</code></p>
+			  <div class="bs-docs-example">
+				<ul class="inline-list">
+					<li><a class="btn-small btn-primaryb btn-primary">基本</a></li>
+					<li><a class="btn btn-primaryb btn-primary">基本</a></li>
+					<li><a class="btn btn-primaryb btn-primary">基本按钮</a></li>
+					<li><a class="btn-large btn-primaryb btn-primary">基本按钮</a></li>
+					<li>纯色背景按钮，轻量化场景应用</li>
+				</ul>
+				<ul class="inline-list">
+					<li><a class="btn-small btn-primary">基本</a></li>
+					<li><a class="btn btn-primary">基本</a></li>
+					<li><a class="btn btn-primary">基本按钮</a></li>
+					<li><a class="btn-large btn-primary">基本按钮</a></li>
+					<li>渐变色突出按钮，视觉强调些</li>
+				</ul>
+			  </div>
+<pre class="prettyprint linenums">
+&lt;button class="btn-small" type="button"&gt;{{_i}}基本{{/i}}&lt;/button&gt;
+&lt;button class="btn" type="button"&gt;{{_i}}基本{{/i}}&lt;/button&gt;
+&lt;button class="btn" type="button"&gt;{{_i}}基本按钮{{/i}}&lt;/button&gt;
+&lt;button class="btn-large" type="button"&gt;{{_i}}基本按钮{{/i}}&lt;/button&gt;
+</pre>
         </div>
     </div>
     <div class="row">
@@ -121,186 +91,275 @@
 			<p class="demo-ui"><a href="http://img01.taobaocdn.com/tps/i1/T1Ui3SXaFcXXa34Grq-782-656.png" target="_blank"><img src="http://img01.taobaocdn.com/tps/i1/T1Ui3SXaFcXXa34Grq-782-656.png_200x200.jpg"/></a></p>
         </div>
         <div class="span9">
-            <h3></h3>
-            <p>OCP添加了强调样式<code>btn-emphasize</code>和主要操作样式<code>btn-normal</code>其他按钮样式保留</p>
-            <div>
-                <p><a class="btn btn-small btn-emphasize">这是强调按钮</a></p>
-                <p><a class="btn btn-large btn-emphasize">这是强调按钮</a></p>
-                <p><a class="btn btn-small btn-normal">这是主要操作按钮</a></p>
-                <p><a class="btn btn-large btn-normal">这是主要操作按钮</a></p>
-            </div>
+            <h3>DEMO SHOW</h3>
+            <p>class定义：<code>btn-aid</code>、<code>btn-aid</code>、<code>btn-aid</code>; 纯色背景需要增加<code>btn-aidb</code></p>
+			  <div class="bs-docs-example">
+				<ul class="inline-list">
+					<li><a class="btn-small btn-aidb btn-aid">基本</a></li>
+					<li><a class="btn btn-aidb btn-aid">基本</a></li>
+					<li><a class="btn btn-aidb btn-aid">基本按钮</a></li>
+					<li><a class="btn-large btn-aidb btn-aid">基本按钮</a></li>
+					<li>纯色背景按钮，轻量化场景应用</li>
+				</ul>
+				<ul class="inline-list">
+					<li><a class="btn-small btn-aid">基本</a></li>
+					<li><a class="btn btn-aid">基本</a></li>
+					<li><a class="btn btn-aid">基本按钮</a></li>
+					<li><a class="btn-large btn-aid">基本按钮</a></li>
+					<li>渐变色突出按钮，视觉强调些</li>
+				</ul>
+			  </div>
+<pre class="prettyprint linenums">
+&lt;button class="btn-small btn-aid" type="button"&gt;{{_i}}基本{{/i}}&lt;/button&gt;
+&lt;button class="btn btn-aid" type="button"&gt;{{_i}}基本{{/i}}&lt;/button&gt;
+&lt;button class="btn btn-aid" type="button"&gt;{{_i}}基本按钮{{/i}}&lt;/button&gt;
+&lt;button class="btn-large btn-aid" type="button"&gt;{{_i}}基本按钮{{/i}}&lt;/button&gt;
+</pre>
         </div>
+    </div>
+</section>
+
+
+<!-- Colors(文本颜色) 
+================================================== -->
+<section id="colors">
+    <div class="page-header">
+        <h2>Colors(文本颜色)</h2>
+    </div>
+
+    <div class="row">
+		<div class="span3 inline-list-wrap">
+            <h3>文本颜色觉规范</h3>
+			<p class="demo-ui"><a href="http://img02.taobaocdn.com/tps/i2/T1qIgVXhheXXaDMY3_-1023-917.png" target="_blank"><img src="http://img02.taobaocdn.com/tps/i2/T1qIgVXhheXXaDMY3_-1023-917.png"/></a></p>
+		</div>
+        <div class="span4 inline-list-wrap">
+			<h3>DEMO SHOW</h3>
+			<table class="table table-bordered table-striped">
+				<thead>
+				  <tr>
+					<th>文本字体颜色</th>
+					<th>class=""</th>
+				  </tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="color-black">
+                		字体颜色为黑色文本
+					</td>
+					<td>
+						<code>color-black</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-graydarker">
+                		字体颜色为比较黑色
+					</td>
+					<td>
+						<code>color-graydarker</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-graydark">
+                		字体颜色为暗灰色
+					</td>
+					<td>
+						<code>color-graydark</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-gray">
+                		字体颜色为灰色
+					</td>
+					<td>
+						<code>color-gray</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-graylight">
+                		字体颜色为亮灰色
+					</td>
+					<td>
+						<code>color-graylight</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-graylighter">
+                		字体颜色为更亮灰色
+					</td>
+					<td>
+						<code>color-graylighter</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-white">
+                		<span style="background:#000">字体颜色为白色</span>
+					</td>
+					<td>
+						<code>color-white</code>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+        </div>
+		<div class="span4 inline-list-wrap">
+			<h3>DEMO SHOW</h3>
+			<table class="table table-bordered table-striped">
+				<thead>
+				  <tr>
+					<th>文本字体颜色</th>
+					<th>class=""</th>
+				  </tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="color-blue">
+                		字体颜色为蓝色
+					</td>
+					<td>
+						<code>color-blue</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-blueDark">
+                		字体颜色为深蓝色
+					</td>
+					<td>
+						<code>color-blueDark</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-green">
+                		字体颜色为绿色
+					</td>
+					<td>
+						<code>color-green</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-red">
+                		字体颜色为红色
+					</td>
+					<td>
+						<code>color-red</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-yellow">
+                		字体颜色为黄色
+					</td>
+					<td>
+						<code>color-yellow</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-orange">
+                		字体颜色为橙色
+					</td>
+					<td>
+						<code>color-orange</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-pink">
+						字体颜色为粉色
+					</td>
+					<td>
+						<code>color-pink</code>
+					</td>
+				</tr>
+				<tr>
+					<td class="color-perple">
+						字体颜色为紫色
+					</td>
+					<td>
+						<code>color-purple</code>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
     </div>
 
 </section>
 
-
-
-<!-- Icons
+<!-- Icons 
 ================================================== -->
 <section id="icons">
     <div class="page-header">
-        <h2>icons</h2>
+        <h2>Icons (图标)</h2>
     </div>
 
     <div class="row">
         <div class="span10">
-            <p>使用icon时需要我们约定使用<code>i</code>元素，并且每个icon都必须添加类名<code>ocp-icon</code>(保留了所有的bootstrapicon)</p>
-            <p>同时我们使用类名<code>ocp-icon-normal</code>、<code>ocp-icon-big</code>、<code>ocp-icon-large</code>来控制icon的尺寸，注意部分icon是只有一种尺寸的...</p>
-            <p>使用<code>opc-icon-type</code>来指定icon的图标</p>
-
-                <ul class="span3">
-                    <li><i class="ocp-icon-tip"></i>ocp-icon-tip</li>
-                    <li><i class="ocp-icon-big-tip"></i>ocp-icon-big-tip</li>
-                    <li><i class="ocp-icon-large-tip"></i>ocp-icon-large-tip</li>
-                </ul>
-                <ul class="span3">
-                    <li><i class="ocp-icon-success"></i>ocp-icon-success</li>
-                    <li><i class="ocp-icon-big-success"></i>ocp-icon-big-success</li>
-                    <li><i class="ocp-icon-large-success"></i>ocp-icon-large-success</li>
-                </ul>
-                <ul class="span3">
-                    <li><i class="ocp-icon-info"></i>ocp-icon-info</li>
-                    <li><i class="ocp-icon-big-info"></i>ocp-icon-big-info</li>
-                    <li><i class="ocp-icon-large-info"></i>ocp-icon-large-info</li>
-                </ul>
-                <ul class="span3">
-                    <li><i class="ocp-icon-question"></i>ocp-icon-question</li>
-                    <li><i class="ocp-icon-big-question"></i>ocp-icon-big-question</li>
-                    <li><i class="ocp-icon-large-question"></i>ocp-icon-large-question</li>
-                </ul>
-                <ul class="span3">
-                    <li><i class="ocp-icon-forbid"></i>ocp-icon-forbid</li>
-                    <li><i class="ocp-icon-big-forbid"></i>ocp-icon-big-forbid</li>
-                    <li><i class="ocp-icon-large-forbid"></i>ocp-icon-large-forbid</li>
-                </ul>
-                <ul class="span3">
-                    <li><i class="ocp-icon-error"></i>ocp-icon-error</li>
-                    <li><i class="ocp-icon-big-error"></i>ocp-icon-big-error</li>
-                    <li><i class="ocp-icon-large-error"></i>ocp-icon-large-error</li>
-                </ul>
-            <ul class="span3">
-                <li><i class="ocp-icon-up"></i>ocp-icon-up</li>
-                <li><i class="ocp-icon-down"></i>ocp-icon-down</li>
-                <li><i class="ocp-icon-left"></i>ocp-icon-left</li>
-                <li><i class="ocp-icon-right"></i>ocp-icon-right</li>
-                <li><i class="ocp-icon-close"></i>ocp-icon-close</li>
-                <li><i class="ocp-icon-plus"></i>ocp-icon-plus</li>
-                <li><i class="ocp-icon-minus"></i>ocp-icon-minus</li>
-                <li><i class="ocp-icon-fold"></i>ocp-icon-fold</li>
-                <li><i class="ocp-icon-unfold"></i>ocp-icon-unfold</li>
-                <li><i class="ocp-icon-setting"></i>ocp-icon-setting</li>
-                <li><i class="ocp-icon-edit"></i>ocp-icon-edit</li>
+			<ul class="span4">
+				<li><i class="icon-shop"></i> <code>icon-shop</code> 店铺动态</li>
+				<li><i class="icon-select"></i> <code>icon-select</code> 帮我挑</li>
+				<li><i class="icon-money"></i> <code>icon-large-tip</code> 淘金币</li>
+				<li><i class="icon-group"></i> <code>icon-group</code> 圈子</li>
+				<li><i class="icon-box"></i> <code>icon-box</code> 任务盒子</li>
+				<li><i class="icon-bought"></i> <code>icon-bought</code> 已购</li>
+				<li><i class="icon-bought-show"></i> <code>icon-bought-show</code> 已购实物绣</li>
+				<li><i class="icon-shop-big"></i> <code>icon-shop-big</code> 店铺动态大icon</li>
+				<li><i class="icon-select-big"></i> <code>icon-select-big</code> 帮我挑大icon</li>
+			</ul>
+            <ul class="span4">
+                <li><i class="icon-up"></i> icon-up</li>
+                <li><i class="icon-down"></i> icon-down</li>
+                <li><i class="icon-left"></i> icon-left</li>
+                <li><i class="icon-right"></i> icon-right</li>
+                <li><i class="icon-close"></i> icon-close</li>
+                <li><i class="icon-plus"></i> icon-plus</li>
+                <li><i class="icon-minus"></i> icon-minus</li>
+                <li><i class="icon-fold"></i> icon-fold</li>
+                <li><i class="icon-unfold"></i> icon-unfold</li>
+                <li><i class="icon-setting"></i> icon-setting</li>
+                <li><i class="icon-edit"></i> icon-edit</li>
             </ul>
         </div>
     </div>
 </section>
 
-<!-- Alert
+<!-- tips 
 ================================================== -->
-<section id="alert">
+<section id="tips">
 
     <div class="page-header">
-        <h2>alert</h2>
+        <h2>Tips (提示)</h2>
     </div>
 
     <div class="row">
-        <div class="span5">
-            <h2>纯文字提示框</h2>
-            <p>目前以供有四种样式。注意<code>alert</code>本身不控制<code>display</code>样式，因此是行内显示还是块级显示取决于你使用的容器</p>
-            <p><code>alert</code>：<span class="alert" > 这是默认的样式</span></p>
-            <p><code>alert alert-warning</code>：<span class="alert alert-warning" > 这是警告</span></p>
-            <p><code>alert alert-success</code>：<span class="alert alert-success" > 这是成功的样式!</span></p>
-            <p><code>alert alert-error</code>：<span class="alert alert-error" > 这是错误的样式!</span></p>
-            <p><code>alert alert-info</code>：<span class="alert alert-info" > 这是信息提示样式!</span></p>
-            <p><code>alert alert-question</code>：<span class="alert alert-question" > 这是疑问信息样式!</span></p>
+        <div class="span3">
+            <h3>tips提示觉规范</h3>
+			<p class="demo-ui"><a href="http://img01.taobaocdn.com/tps/i1/T1m.UVXe0eXXbYF0zT-1049-906.png" target="_blank"><img src="http://img01.taobaocdn.com/tps/i1/T1m.UVXe0eXXbYF0zT-1049-906.png"/></a></p>
         </div>
-        <div class="span5">
-            <h2>带有图标的提示框</h2>
-			<p><span class="alert alert-warning" > <i class="ocp-icon-tip"></i> 这是警告</span></p>
-			<p><span class="alert alert-warning" > <i class="ocp-icon-success"></i> 这是成功的样式</span></p>
-			<p><span class="alert alert-warning" > <i class="ocp-icon-error"></i> 这是错误的样式</span></p>
-			<p><span class="alert alert-warning" > <i class="ocp-icon-info"></i> 这是信息提示样式</span></p>
-			<p><span class="alert alert-warning" > <i class="ocp-icon-question"></i> 这是疑问信息样式</span></p>
-        </div>
-    </div>
-</section>
-
-<!-- Bubble 
-================================================== -->
-<section id="bubble">
-
-    <div class="page-header">
-        <h2>bubble</h2>
-        <p class="lead">OCP中的常用信息气泡样式.</p>
-    </div>
-
-    <div class="row">
-        <div class="span10">
-            <h3>关于箭头的说明</h3>
-            <p>箭头的实现使用的是两个宽高均为0的<code>i</code>元素，叠加，并设置其border来实现。箭头的大小和border宽度均可以再源码中设置</p>
-            <p>箭头的具体位置可以通过手动设置<code>.bubble-arrow</code>的<code>left、right、bottom、top</code>值来实现</p>
-            <p>使用箭头必须设置箭头的位置，四个方向的class分别为：<code>bubble-arrow-top</code>、<code>bubble-arrow-left</code>、<code>bubble-arrow-right</code>、<code>bubble-arrow-bottom</code></p>
-            <p>一般的HTML结构如下：也可以根据需要添加多个箭头，只需要多设置几个<code>bubble-arrow</code>便可</p>
-            <p>
-                <pre class="prettyprint">
-                    &lt;div class="bubble"&gt;
-                        &lt;div class="bubble-arrow bubble-arrow-top"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
-                        这是一个小气泡
-                    &lt;/div&gt;
-                </pre>
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span4">
-            <h3>箭头在上方</h3>
-            <div class="bubble"><div class="bubble-arrow bubble-arrow-top"><i></i><i class="last"></i></div>这是一个小气泡</div>
-        </div>
-        <div class="span4">
-            <h3>箭头在下方</h3>
-            <div class="bubble"><div class="bubble-arrow bubble-arrow-bottom"><i></i><i class="last"></i></div>这是一个小气泡</div>
-        </div>
-        <div class="span4">
-            <h3>箭头在左方</h3>
-            <div class="bubble"><div class="bubble-arrow bubble-arrow-left"><i></i><i class="last"></i></div>这是一个小气泡</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span4">
-            <h3>箭头在右方</h3>
-            <div class="bubble"><div class="bubble-arrow bubble-arrow-right"><i></i><i class="last"></i></div>这是一个小气泡</div>
-        </div>
-        <div class="span4">
-            <h3>两个箭头</h3>
-            <div class="bubble">
-                <div class="bubble-arrow bubble-arrow-top"><i></i><i class="last"></i></div>
-                <div class="bubble-arrow bubble-arrow-top" style="left: auto; right: 50px"><i></i><i class="last"></i></div>
-                这是一个小气泡</div>
-        </div>
-        <div class="span4">
-            <h3>扩展灰色提示</h3>
-			<p>默认为黄色提示，扩展灰色提示<code>bubble bubble-gray</code></p>
-            <div class="bubble bubble-gray">
-                <div class="bubble-arrow bubble-arrow-top"><i></i><i class="last"></i></div>
-                这是一个灰色的小气泡</div>
-        </div>
-    </div>
-</section>
-
-<!-- Tag
-================================================== -->
-<section id="tags">
-    <div class="page-header">
-        <h2>Tag</h2>
-    </div>
-
-    <div class="row">
-        <div class="span10">
-			<h2>标签:</h2>
-			<p>普通标签: <span class="ocp-tag-normal">标签名称</span></p>
-			<p>选中后状态: <span class="ocp-tag-selected">标签名称</span></p>
-			<p>带删除 icon 的标签: <span class="ocp-tag-normal">标签名称<i class="ocp-icon-close"></i></span></p>
+        <div class="span9">
+            <h3>DEMO SHOW</h3>
+			<p>箭头的方向根据class来决定<code>tips-arrow-top</code>、<code>tip-arrow-left</code>、<code>tip-arrow-bottom</code>、<code>tip-arrow-right</code></p>
+			  <div class="bs-docs-example" style="height:140px">
+				<div class="span3">
+					<div class="tips"><div class="tips-arrow tips-arrow-top"><i></i><i class="last"></i></div>这是一个小提,多行文本提示设置宽度解决问题。两行文本</div>
+				</div>
+				<div class="span3">
+					<div class="tips"><div class="tips-arrow tips-arrow-bottom"><i></i><i class="last"></i></div><b>文本提示：</b>这是一个小提示</div>
+				</div>
+				<div class="span3">
+					<div class="tips"><div class="tips-arrow tips-arrow-left"><i></i><i class="last"></i></div>这是一个小提示</div>
+				</div>
+				<div class="span3">
+					<div class="tips"><div class="tips-arrow tips-arrow-right"><i></i><i class="last"></i></div>这是一个小提示</div>
+				</div>
+				<div class="span3">
+					<div class="tips tips-gray">
+					<div class="tips-arrow tips-arrow-top"><i></i><i class="last"></i></div>
+					这是一个灰色的提示</div>
+				</div>
+			  </div>
+<pre class="prettyprint linenums">
+	&lt;div class="tips"&gt;
+		&lt;div class="tips-arrow tips-arrow-top"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+		这是一个小提示
+	&lt;/div&gt;
+</pre>
         </div>
     </div>
 </section>
@@ -313,29 +372,39 @@
     </div>
 
     <div class="row">
-        <div class="span10">
-        <div class="span10">
-            <h3>关于Tab的说明</h3>
-            <p>标签页的实现使用<code>ul, li</code>元素，为ul设置<code>ocp-tab</code>class, 选中状态的标签在li上增加<code>selected</code>class即可</p>
-			<pre class="prettyprint">
-				&lt;ul class="ocp-tab"&gt;
-					&lt;li class="selected"&gt;
-						&lt;a href="#"&gt;&lt;span&gt;Tab-one&lt;/span&gt;&lt;/a&gt;
-					&lt;/li&gt;
-					&lt;li&gt;
-						&lt;a href="#"&gt;&lt;span&gt;Tab-two&lt;/span&gt;&lt;/a&gt;
-					&lt;/li&gt;
-				&lt;/ul&gt;
-			</pre>
-			<h2>Tab页:</h2>
-			<ul class="ocp-tab">
-                <li class="selected">
-                    <a href="#"><span>Tab-one</span></a>
-                </li>
-                <li>
-                    <a href="#"><span>Tab-two</span></a>
-                </li>
-			</ul>
+        <div class="span3">
+            <h3>Tab视觉规范</h3>
+			<p class="demo-ui"><a href="http://img01.taobaocdn.com/tps/i1/T141kkXlhgXXb6fHf.-1059-899.png" target="_blank"><img src="http://img01.taobaocdn.com/tps/i1/T141kkXlhgXXb6fHf.-1059-899.png"/></a></p>
+        </div>
+        <div class="span9">
+            <h3>DEMO SHOW</h3>
+            <p>标签页的实现使用<code>ul, li</code>元素，为ul设置<code>tab</code>class, 选中状态的标签在li上增加<code>selected</code>class即可</p>
+			  <div class="bs-docs-example">
+				<ul class="tab">
+					<li class="selected">
+						<a href="#"><span>好友动态</span></a>
+					</li>
+					<li>
+						<a href="#"><span>店铺动态</span></a>
+					</li>
+					<li>
+						<a href="#"><span>于我相关</span></a>
+					</li>
+				</ul>
+			  </div>
+<pre class="prettyprint linenums">
+&lt;ul class="tab"&gt;
+	&lt;li class="selected"&gt;
+		&lt;a href="#"&gt;&lt;span&gt;好友动态&lt;/span&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#"&gt;&lt;span&gt;店铺动态&lt;/span&gt;&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#"&gt;&lt;span&gt;于我相关&lt;/span&gt;&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
         </div>
     </div>
 </section>
