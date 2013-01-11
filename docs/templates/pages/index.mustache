@@ -7,8 +7,9 @@
       <li><a href="#buttons">{{_i}}Buttons{{/i}}</a></li>
       <li><a href="#colors">{{_i}}Colors{{/i}}</a></li>
       <li><a href="#icons">{{_i}}Icons{{/i}}</a></li>
-      <li><a href="#tips">{{_i}}tips{{/i}}</a></li>
+      <li><a href="#tips">{{_i}}Tips{{/i}}</a></li>
       <li><a href="#tab">{{_i}}Tab{{/i}}</a></li>
+      <li><a href="#page">{{_i}}Page{{/i}}</a></li>
     </ul>
   </div>
 </header>
@@ -29,9 +30,11 @@
         <div class="span9">
             <h3>DEMO SHOW</h3>
             <p>class定义：<code>btn-small</code>、<code>btn</code>、<code>btn-large</code></p>
+            <p>按钮不可用状态增加class<code>btn-disabled</code></p>
 			  <div class="bs-docs-example">
 				<ul class="inline-list">
 					<li><a class="btn-small btn-base">基本</a></li>
+					<li><a class="btn-small btn-base btn-disabled">基本</a></li>
 					<li><a class="btn btn-base">基本</a></li>
 					<li><a class="btn btn-base">基本按钮</a></li>
 					<li><a class="btn-large btn-base">基本按钮</a></li>
@@ -408,4 +411,51 @@
         </div>
     </div>
 </section>
+<!-- Pagination
+================================================== -->
+<section id="page">
+  <div class="page-header">
+	<h1>{{_i}}Page(翻页){{/i}} <small>{{_i}}{{/i}}</small></h1>
+  </div>
 
+    <div class="row">
+        <div class="span3">
+            <h3>Page视觉规范</h3>
+			<p class="demo-ui"><a href="http://img01.taobaocdn.com/tps/i1/T1qh7oXnhgXXb57KfL-928-906.png" target="_blank"><img src="http://img01.taobaocdn.com/tps/i1/T1qh7oXnhgXXb57KfL-928-906.png"/></a></p>
+        </div>
+        <div class="span9">
+            <h3>DEMO SHOW</h3>
+			  <div class="bs-docs-example">
+				<div class="pagination">
+				  <ul>
+					<li><a href="#">&laquo;</a></li>
+					<li class="disabled"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a class="dot">...</a></li>
+					<li><a href="#">&raquo;</a></li>
+					<li><button class="btn-small btn-base">上一页</button></li>
+					<li><button class="btn-small btn-base btn-disabled">下一页</button></li>
+				  </ul>
+				</div>
+			  </div>
+<pre class="prettyprint linenums">
+&lt;div class="pagination"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Prev&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="disabled" &gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a class="dot" href="#"&gt;...&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;button class="btn-small btn-base"&gt;上一页&lt;/button&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;button class="btn-small btn-base btn-disabled"&gt;下一页&lt;/button&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+    </div>
+</section>
