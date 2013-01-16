@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Javascript · MytaobaoDPL</title>
@@ -9,12 +9,12 @@
 
 	<link rel="shortcut icon" href="http://pics.taobaocdn.com/favicon.ico" type="image/x-icon"/>
 	<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js" ></script>
+	<script type="text/javascript" src="assets/js/docs.js" ></script>
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-	<link rel="stylesheet/less" href="/path/to/bootstrap.less">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -46,7 +46,7 @@
                 <a href="./javascript.html">JS组件</a>
               </li>
 			  <li class="">
-                <a href="./scaffolding.html">HTML</a>
+                <a href="./scaffolding.html">HTML框架</a>
               </li>
               <li class="">
                 <a target="_blank" href="http://www.taobao.com/go/chn/snsdkjs/home.php">SNS-JSSDK</a>
@@ -72,81 +72,137 @@
 	  <!-- Masthead
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
-        <h1>Javascript</h1>
-        <div class="subnav">
+        <h1>JS 组件</h1>
+  		<div class="subnav" id="J_SubNav">
           <ul class="nav nav-pills">
-            <li><a href="#javascript">All plugins</a></li>
-            <li><a href="#tree">Tree</a></li>
-            <li><a href="#treeNode">TreeNode</a></li>
-            <li><a href="#forest">Forest</a></li>
-            <li><a href="#dialogbox">S.Dialogbox</a></li>
+            <li><a href="#Friendfollow">Friendfollow</a></li>
+            <li><a href="#Waterfallx">Waterfallx</a></li>
+            <li><a href="#RoundAvatar">RoundAvatar</a></li>
           </ul>
         </div>
       </header>
 
-      <!-- Using Javascript w/ Bootstrap
-      ================================================== -->
-      <section id="javascript">
-        <div class="page-header">
-          <h1>KISSY Plugins <small>先在页面中外链<code>http://a.tbcdn.cn/p/sns/1.0/index.js</code>，注意请一定在kissy之后</small></h1>
-        </div>
+    <!-- friendfollow 
+    ================================================== -->
+    <section id="Friendfollow">
+      <div class="page-header">
+        <h1>Friendfollow <small>SNS.widget.friendfollow</small></h1>
+      </div>
       <div class="row">
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#treeNode">TreeNode</a></h3>
-            <p>treeNode 树节点类</p>
-          </label>
+        <div class="span3 columns">
+          <h3>加关注组件</h3>
+          <p>需额外引入：<code>http://a.tbcdn.cn/p/snsdk/core.js</code>snsdk核心文件</p>
+          <p>组件实现有三种方式：1、根据class钩子调用js; 2、js代码SNS.require()初始化调用; 3、js代码SNS.ui()外部统一调用使用; </p>
+          <p>源文件：<a href="http://svn.taobao-develop.com/repos/assets/trunk/assets/p/snsdk/src/widget/friendfollow.js" target="_blank" >friendfollow.js</a></p>
+          <p>作者：道璘</p>
+          <a href="demo/friendfollow.html" target="_blank" class="btn">DEMO查看</a>
         </div>
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#tree">Tree</a></h3>
-            <p>tree动态树类</p>
-          </label>
-        </div>
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#forest">Forest</a></h3>
-            <p>forest 森林控件，包含树对象序列</p>
-          </label>
-        </div>
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#dialogbox">S.Dialogbox</a></h3>
-            <p>基于KISSY Overlay的二次封装的弹出框插件dialogbox，添加及优化功能：1、增加alert,comfirm提示，2、优化多次new overlay对象。3、简化配置项。4、增加移动端适配。5、简洁的对外接口</p>
-          </label>
+        <div class="span9 columns">
+          <h2>Example Demo</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/friendfollow.html"></iframe>
+		  </div>
+
+          <h2>三种方式引用</h2>
+          <p>1、页面直接通过class="<code>sns-widget</code>"钩子引用组件,参数需要自定义属性<code>data-friendfollow</code>中注明</p>
+<pre class="prettyprint linenums">
+&lt;span class="sns-widget" data-friendfollow='{"userId":2055117420, skinType:"green2"}'&gt;&lt;/span &gt;
+</pre>
+          <p>2、js代码SNS.require()异步调用</p>
+<pre class="prettyprint linenums">
+&lt;span class="J_FriendFollow" data-userid="176010454" data-group-skin="green" &gt;&lt;/span &gt;
+</pre>
+<pre class="prettyprint linenums">
+/**
+ * 最里层API调用,针对复杂交换应用
+ * @param {object} FriendFollow 组件对象 
+ */
+SNS.require(['sns/widget/follow/follow'], function(FriendFollow) {
+	//更新所有页面内class为.J_FriendFollow组件
+	FriendFollow.upload();
+
+	FriendFollow.config('#J_Follow2', {
+		srcNode : '#J_FriendGroupContainer',
+		align : ['tr', 'br']
+	});
+
+	//容器统一配置, 针对容器内所有加关注按钮生效
+	FriendFollow.configContainer('#container2', {
+		align : ['tr', 'br'],
+		//skin : 'green',
+		follow : function(ev) {
+			console.log('container2 follow ', ev)
+		}
+	});
+
+	//容器统一绑定事件
+	FriendFollow.on('#J_ToolbarContainer', 'follow', function(ev) {
+		console.log(ev);
+		//D.html('#info', '这里是关注回调事件, 次数为: ' + (++count));
+	});
+});
+</pre>
+          <p>3、js代码SNS.ui()统一对外异步调用,<a href="http://www.taobao.com/go/chn/snsdkjs/plugin.php#follow" target="_blank">具体查看</a></p>
         </div>
       </div>
-      <div class="alert alert-info"><strong>Heads up!</strong> All javascript plugins require the latest version of jQuery.</div>
     </section>
 	
 
+    <!-- Waterfallx 
+    ================================================== -->
+    <section id="Waterfallx">
+      <div class="page-header">
+        <h1>Waterfallx <small>KISSY.gallery.waterfallx</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>瀑布流组件</h3>
+          <p>作者：踏风</p>
+          <a href="demo/waterfallx.html" target="_blank" class="btn">DEMO查看</a>
+        </div>
+        <div class="span9 columns">
+          <h2>Example Demo</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/waterfallx.html"></iframe>
+		  </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- RoundAvatar 
+    ================================================== -->
+    <section id="RoundAvatar">
+      <div class="page-header">
+        <h1>RoundAvatar <small>sns/sdl/roundavatar.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>ie下的圆形头像组件</h3>
+          <p>作者：灵玉</p>
+          <a href="demo/roundavatar.html" target="_blank" class="btn">DEMO查看</a>
+        </div>
+        <div class="span9 columns">
+          <h2>Example Demo</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/roundavatar.html"></iframe>
+		  </div>
+        </div>
+      </div>
+    </section>
 
 
      <!-- Footer
       ================================================== -->
       <footer class="footer">
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p style="text-align:right" class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Source on <a href="https://github.com/chesihui/mytaobaodpl" target="_blank">github mytaobaoDPL</a>. </p>
       </footer>
 
     </div><!-- /container -->
 
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/application.js"></script>
     <!-- Le javascript
     ================================================== -->

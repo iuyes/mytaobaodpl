@@ -30,6 +30,9 @@ h3{
 .inline-list {
 	margin-bottom:15px;
 }
+iframe {
+	border:0px none;
+}
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
 nav {

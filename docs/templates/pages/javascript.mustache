@@ -1,52 +1,120 @@
 	  <!-- Masthead
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
-        <h1>{{_i}}Javascript{{/i}}</h1>
-        <div class="subnav">
+        <h1>{{_i}}JS 组件{{/i}}</h1>
+  		<div class="subnav" id="J_SubNav">
           <ul class="nav nav-pills">
-            <li><a href="#javascript">{{_i}}All plugins{{/i}}</a></li>
-            <li><a href="#tree">{{_i}}Tree{{/i}}</a></li>
-            <li><a href="#treeNode">{{_i}}TreeNode{{/i}}</a></li>
-            <li><a href="#forest">{{_i}}Forest{{/i}}</a></li>
-            <li><a href="#dialogbox">{{_i}}S.Dialogbox{{/i}}</a></li>
+            <li><a href="#Friendfollow">{{_i}}Friendfollow{{/i}}</a></li>
+            <li><a href="#Waterfallx">{{_i}}Waterfallx{{/i}}</a></li>
+            <li><a href="#RoundAvatar">{{_i}}RoundAvatar{{/i}}</a></li>
           </ul>
         </div>
       </header>
 
-      <!-- Using Javascript w/ Bootstrap
-      ================================================== -->
-      <section id="javascript">
-        <div class="page-header">
-          <h1>{{_i}}KISSY Plugins{{/i}} <small>{{_i}}先在页面中外链<code>http://a.tbcdn.cn/p/sns/1.0/index.js</code>，注意请一定在kissy之后{{/i}}</small></h1>
-        </div>
+    <!-- friendfollow 
+    ================================================== -->
+    <section id="Friendfollow">
+      <div class="page-header">
+        <h1>{{_i}}Friendfollow{{/i}} <small>SNS.widget.friendfollow</small></h1>
+      </div>
       <div class="row">
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#treeNode">{{_i}}TreeNode{{/i}}</a></h3>
-            <p>{{_i}}treeNode 树节点类{{/i}}</p>
-          </label>
+        <div class="span3 columns">
+          <h3>{{_i}}加关注组件{{/i}}</h3>
+          <p>{{_i}}需额外引入：<code>http://a.tbcdn.cn/p/snsdk/core.js</code>snsdk核心文件{{/i}}</p>
+          <p>{{_i}}组件实现有三种方式：1、根据class钩子调用js; 2、js代码SNS.require()初始化调用; 3、js代码SNS.ui()外部统一调用使用; {{/i}}</p>
+          <p>{{_i}}源文件：<a href="http://svn.taobao-develop.com/repos/assets/trunk/assets/p/snsdk/src/widget/friendfollow.js" target="_blank" >friendfollow.js</a>{{/i}}</p>
+          <p>{{_i}}作者：道璘{{/i}}</p>
+          <a href="demo/friendfollow.html" target="_blank" class="btn">{{_i}}DEMO查看{{/i}}</a>
         </div>
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#tree">{{_i}}Tree{{/i}}</a></h3>
-            <p>{{_i}}tree动态树类{{/i}}</p>
-          </label>
-        </div>
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#forest">{{_i}}Forest{{/i}}</a></h3>
-            <p>{{_i}}forest 森林控件，包含树对象序列{{/i}}</p>
-          </label>
-        </div>
-        <div class="span3">
-          <label>
-            <h3><a href="./javascript.html#dialogbox">{{_i}}S.Dialogbox{{/i}}</a></h3>
-            <p>{{_i}}基于KISSY Overlay的二次封装的弹出框插件dialogbox，添加及优化功能：1、增加alert,comfirm提示，2、优化多次new overlay对象。3、简化配置项。4、增加移动端适配。5、简洁的对外接口{{/i}}</p>
-          </label>
+        <div class="span9 columns">
+          <h2>{{_i}}Example Demo{{/i}}</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/friendfollow.html"></iframe>
+		  </div>
+
+          <h2>{{_i}}三种方式引用{{/i}}</h2>
+          <p>{{_i}}1、页面直接通过class="<code>sns-widget</code>"钩子引用组件,参数需要自定义属性<code>data-friendfollow</code>中注明{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;span class="sns-widget" data-friendfollow='{"userId":2055117420, skinType:"green2"}'&gt;&lt;/span &gt;
+</pre>
+          <p>{{_i}}2、js代码SNS.require()异步调用{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;span class="J_FriendFollow" data-userid="176010454" data-group-skin="green" &gt;&lt;/span &gt;
+</pre>
+<pre class="prettyprint linenums">
+/**
+ * 最里层API调用,针对复杂交换应用
+ * @param {object} FriendFollow 组件对象 
+ */
+SNS.require(['sns/widget/follow/follow'], function(FriendFollow) {
+	//更新所有页面内class为.J_FriendFollow组件
+	FriendFollow.upload();
+
+	FriendFollow.config('#J_Follow2', {
+		srcNode : '#J_FriendGroupContainer',
+		align : ['tr', 'br']
+	});
+
+	//容器统一配置, 针对容器内所有加关注按钮生效
+	FriendFollow.configContainer('#container2', {
+		align : ['tr', 'br'],
+		//skin : 'green',
+		follow : function(ev) {
+			console.log('container2 follow ', ev)
+		}
+	});
+
+	//容器统一绑定事件
+	FriendFollow.on('#J_ToolbarContainer', 'follow', function(ev) {
+		console.log(ev);
+		//D.html('#info', '这里是关注回调事件, 次数为: ' + (++count));
+	});
+});
+</pre>
+          <p>{{_i}}3、js代码SNS.ui()统一对外异步调用{{/i}},<a href="http://www.taobao.com/go/chn/snsdkjs/plugin.php#follow" target="_blank">具体查看</a></p>
         </div>
       </div>
-      <div class="alert alert-info"><strong>{{_i}}Heads up!{{/i}}</strong> {{_i}}All javascript plugins require the latest version of jQuery.{{/i}}</div>
     </section>
 	
 
+    <!-- Waterfallx 
+    ================================================== -->
+    <section id="Waterfallx">
+      <div class="page-header">
+        <h1>{{_i}}Waterfallx{{/i}} <small>KISSY.gallery.waterfallx</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}瀑布流组件{{/i}}</h3>
+          <p>{{_i}}作者：踏风{{/i}}</p>
+          <a href="demo/waterfallx.html" target="_blank" class="btn">{{_i}}DEMO查看{{/i}}</a>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example Demo{{/i}}</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/waterfallx.html"></iframe>
+		  </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- RoundAvatar 
+    ================================================== -->
+    <section id="RoundAvatar">
+      <div class="page-header">
+        <h1>{{_i}}RoundAvatar{{/i}} <small>sns/sdl/roundavatar.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}ie下的圆形头像组件{{/i}}</h3>
+          <p>{{_i}}作者：灵玉{{/i}}</p>
+          <a href="demo/roundavatar.html" target="_blank" class="btn">{{_i}}DEMO查看{{/i}}</a>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example Demo{{/i}}</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/roundavatar.html"></iframe>
+		  </div>
+        </div>
+      </div>
+    </section>
