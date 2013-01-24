@@ -12,7 +12,7 @@ body {
   position: relative;
   padding-top: 90px;
   background-color: #fff;
-  background-image: url(../img/grid-18px-masked.png);
+  background-image: url(http://img02.taobaocdn.com/tps/i2/T1kiZ5XdFfXXaSiG.9-90-306.png);
   background-repeat: repeat-x;
   background-position: 11px 40px;
 }
@@ -32,6 +32,132 @@ h3{
 }
 iframe {
 	border:0px none;
+}
+.lead {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 27px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  color: #999999;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h1 small {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h2 small {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+h3 small {
+  font-size: 14px;
+}
+
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h4 small {
+  font-size: 12px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: #333333;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+
+code {
+  padding: 2px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+
+pre {
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 9px;
+  font-size: 12.025px;
+  line-height: 18px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+pre.prettyprint {
+  margin-bottom: 18px;
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
 }
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
@@ -786,7 +912,7 @@ nav {
 /* Space out sub-sections more
 -------------------------------------------------- */
 section {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 /* Faded out hr */
@@ -1830,4 +1956,53 @@ table {
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
   background-color: #f5f5f5;
+}
+/* -----------------------------
+ * inline-list 
+ * -----------------------------
+ */
+
+.inline-list {
+  margin-left: 0;
+  overflow: hidden;
+  list-style: none;
+  *zoom: 1;
+}
+
+.inline-list:before,
+.inline-list:after {
+  display: table;
+  content: "";
+}
+
+.inline-list:after {
+  clear: both;
+}
+
+.inline-list > li {
+  float: left;
+}
+
+.inline-list > li {
+  padding-right: 5px;
+  /*  HACK --> IE7 下li内 若a标签为display:inline 则'|'会占据额外的宽度 使用下面的方式hack
+        *padding-right: 0px;
+        但是在 a标签为display:inline-block情况下，则不会有问题
+    */
+
+}
+
+.inline-list > li > a {
+  display: inline-block;
+  margin-right: 5px;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+.inline-list > li:last-child {
+  margin-right: 0;
+}
+
+.inline-list > li:last-child > a {
+  margin-right: 0;
 }

@@ -2,8 +2,10 @@
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
         <h1>{{_i}}JS 组件{{/i}}</h1>
+		<p class="lead">JS 组件汇集组内成果，志在高效率产出页面；更多<a href="http://www.taobao.com/go/chn/snsdkjs/plugin.php" target="_blank">查看sdk组件</a></p>
   		<div class="subnav" id="J_SubNav">
           <ul class="nav nav-pills">
+            <li><a href="#Popup">{{_i}}Popup{{/i}}</a></li>
             <li><a href="#Friendfollow">{{_i}}Friendfollow{{/i}}</a></li>
             <li><a href="#Waterfallx">{{_i}}Waterfallx{{/i}}</a></li>
             <li><a href="#RoundAvatar">{{_i}}RoundAvatar{{/i}}</a></li>
@@ -11,6 +13,45 @@
         </div>
       </header>
 
+    <!-- popup 
+    ================================================== -->
+    <section id="Popup">
+      <div class="page-header">
+        <h1>{{_i}}Popup{{/i}} <small>SNS.confirm</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}mytaobao弹出窗组件{{/i}}</h3>
+          <p>{{_i}}需额外引入：<br/><code>http://a.tbcdn.cn/p/snsdk/core.js</code><br/>snsdk核心文件{{/i}}</p>
+          <p>{{_i}}源文件：<a href="http://svn.taobao-develop.com/repos/assets/trunk/assets/p/snsdk/src/core/confirm.js" target="_blank" >confirm.js</a>{{/i}}</p>
+          <p>{{_i}}作者：道璘{{/i}}</p>
+          <h3>视觉规范</h3>
+	      <p class="demo-ui"><a href="http://img03.taobaocdn.com/tps/i3/T1HWQ6XohgXXXacw6S-2524-1376.png" target="_blank"><img src="http://img03.taobaocdn.com/tps/i3/T1HWQ6XohgXXXacw6S-2524-1376.png_200x200.jpg"/></a></p>
+		  <br/>
+          <a href="demo/friendfollow.html" target="_blank" class="btn-large btn-primary">{{_i}}DEMO查看{{/i}}</a>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example Demo{{/i}}</h2>
+		  <div class="bs-docs-example">
+		  	<iframe width="100%" height="330" class="iframe-demo" src="demo/popup.html"></iframe>
+		  </div>
+<pre class="prettyprint linenums">
+/**
+ * SNS.confirm的UI自定义 
+ * @param {string|html} msg 弹出框内容 
+ * @param {function} callback 点击确定之后调用的回调涵数 
+ * @param {string} customCls 可选,自定义样式的className 
+ * @param {object} cfg 可选,
+ *        cfg.title  提示标题
+ *        cfg.width  ui宽度 
+ *        cfg.height ui高度 
+ */
+
+ SNS.confirm(msg,callback,customCls,cfg);
+</pre>
+        </div>
+      </div>
+    </section>
     <!-- friendfollow 
     ================================================== -->
     <section id="Friendfollow">
@@ -20,16 +61,19 @@
       <div class="row">
         <div class="span3 columns">
           <h3>{{_i}}加关注组件{{/i}}</h3>
-          <p>{{_i}}需额外引入：<code>http://a.tbcdn.cn/p/snsdk/core.js</code>snsdk核心文件{{/i}}</p>
+          <p>{{_i}}需额外引入：<br/><code>http://a.tbcdn.cn/p/snsdk/core.js</code><br/>snsdk核心文件{{/i}}</p>
           <p>{{_i}}组件实现有三种方式：1、根据class钩子调用js; 2、js代码SNS.require()初始化调用; 3、js代码SNS.ui()外部统一调用使用; {{/i}}</p>
           <p>{{_i}}源文件：<a href="http://svn.taobao-develop.com/repos/assets/trunk/assets/p/snsdk/src/widget/friendfollow.js" target="_blank" >friendfollow.js</a>{{/i}}</p>
           <p>{{_i}}作者：道璘{{/i}}</p>
-          <a href="demo/friendfollow.html" target="_blank" class="btn">{{_i}}DEMO查看{{/i}}</a>
+          <h3>视觉规范</h3>
+	      <p class="demo-ui"><a href="http://img01.taobaocdn.com/tps/i1/T1aEE6XjBgXXcV0j.F-1082-675.png" target="_blank"><img src="http://img01.taobaocdn.com/tps/i1/T1aEE6XjBgXXcV0j.F-1082-675.png_200x200.jpg"/></a></p>
+		  <br/>
+          <a href="demo/popup.html" target="_blank" class="btn-large btn-primary">{{_i}}DEMO查看{{/i}}</a>
         </div>
         <div class="span9 columns">
           <h2>{{_i}}Example Demo{{/i}}</h2>
 		  <div class="bs-docs-example">
-		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/friendfollow.html"></iframe>
+		  	<iframe width="300px" height="100" class="iframe-demo" src="demo/friendfollow.html"></iframe>
 		  </div>
 
           <h2>{{_i}}三种方式引用{{/i}}</h2>
@@ -86,13 +130,16 @@ SNS.require(['sns/widget/follow/follow'], function(FriendFollow) {
       <div class="row">
         <div class="span3 columns">
           <h3>{{_i}}瀑布流组件{{/i}}</h3>
+          <p>{{_i}}详细文档：<a href="http://docs.kissyui.com/kissy-gallery/gallery/waterfallx/1.0/help.html" target="_blank">waterfallx help</a>{{/i}}</p>
+          <p>{{_i}}js线上文件可引：<br/><code>http://a.tbcdn.cn/p/sns/1.1/util/waterfallx.js</code>{{/i}}</p>
           <p>{{_i}}作者：踏风{{/i}}</p>
-          <a href="demo/waterfallx.html" target="_blank" class="btn">{{_i}}DEMO查看{{/i}}</a>
+		  <br/>
+          <a href="demo/waterfallx.html" target="_blank" class="btn-large btn-primary">{{_i}}DEMO查看{{/i}}</a>
         </div>
         <div class="span9 columns">
           <h2>{{_i}}Example Demo{{/i}}</h2>
 		  <div class="bs-docs-example">
-		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/waterfallx.html"></iframe>
+		  	<iframe width="100%" height="300" class="iframe-demo" src="demo/waterfallx.html"></iframe>
 		  </div>
         </div>
       </div>
@@ -102,19 +149,73 @@ SNS.require(['sns/widget/follow/follow'], function(FriendFollow) {
     ================================================== -->
     <section id="RoundAvatar">
       <div class="page-header">
-        <h1>{{_i}}RoundAvatar{{/i}} <small>sns/sdl/roundavatar.js</small></h1>
+        <h1>{{_i}}RoundAvatar{{/i}} <small>sns/1.1/util/round-vml.js</small></h1>
       </div>
       <div class="row">
         <div class="span3 columns">
           <h3>{{_i}}ie下的圆形头像组件{{/i}}</h3>
+          <p>{{_i}}文件引入：<br/><code>http://a.tbcdn.cn/p/sns/1.1/util/round-vml.js</code>{{/i}}</p>
+          <p>{{_i}}源文件：<a href="http://svn.taobao-develop.com/repos/assets/trunk/assets/p/sns/1.1/util/round-vml.js">round-vml.js</a>{{/i}}</p>
           <p>{{_i}}作者：灵玉{{/i}}</p>
-          <a href="demo/roundavatar.html" target="_blank" class="btn">{{_i}}DEMO查看{{/i}}</a>
+		  <br/>
+          <a href="demo/roundavatar.html" target="_blank" class="btn-large btn-primary">{{_i}}DEMO查看{{/i}}</a>
         </div>
         <div class="span9 columns">
           <h2>{{_i}}Example Demo{{/i}}</h2>
 		  <div class="bs-docs-example">
-		  	<iframe width="100%" height="100" class="iframe-demo" src="demo/roundavatar.html"></iframe>
+		  	<iframe width="100%" height="150" class="iframe-demo" src="demo/roundavatar.html"></iframe>
 		  </div>
+<pre class="prettyprint linenums">
+&lt;!-- 体验考虑，vml在ie下js需提前加载 --&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;link rel="stylesheet" href="css/header-ie.css"/&gt;
+&lt;script src="http://a.tbcdn.cn/p/sns/1.1/util/round-vml.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;body&gt;&lt;/body&gt;
+
+&lt;!--[if lt IE 9]&gt;
+&lt;script&gt;KISSY.use('util/round-vml', function (S, roundVML) {
+	//ie下圆形头像兼容代码
+	roundVML.init('#J_RoundVml s');
+});&lt;/script&gt;
+&lt;![endif]--&gt;
+</pre>
+	<h3>css3 transition</h3>
+<pre class="prettyprint linenums">
+/* css3 设置所有属性的动画时间及方式 */
+.qz-header .member-wrap .scale,
+.qz-header .member-wrap .show,
+.qz-header .member-wrap .avatar s,
+.qz-header .member-wrap .avatar,
+.qz-header .member-wrap .avatar-wrap {
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+/* css3 透明度动画 */
+.qz-header .member-wrap .avatar {
+    -ms-transition: opacity 0.1s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+}
+/* css3 放大镜效果 */
+.qz-header .member-wrap .scale {
+    -moz-transform: scale(1.7, 1.7);
+    -webkit-transform: scale(1.7, 1.7);
+    -o-transform: scale(1.7, 1.7);
+    -ms-transform: scale(1.7, 1.7);
+    transform: scale(1.7, 1.7);
+    position: relative;
+    left: 1px;
+    top: 1px;
+ 
+}
+</pre>
         </div>
       </div>
     </section>

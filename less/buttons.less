@@ -14,7 +14,6 @@
   margin-bottom: 0; // For input.btn
   font-size: @baseFontSize;
   line-height: @baseLineHeight + 2px;
-  *line-height: 20px;
   color: @grayDark;
   text-align: center;
   vertical-align: middle;
@@ -34,7 +33,7 @@
   color: @grayDark;
   text-decoration: none;
   background-color: darken(@white, 10%);
-  background-position: 0 -15px;
+  background-position: 0 -30px;
 
   // transition is only when going to hover, otherwise the background
   // behind the gradient (there for IE<=9 fallback) gets mismatched
@@ -76,13 +75,26 @@
 // Small
 .btn-small {
   font-size: @baseFontSize;
-  line-height: @baseLineHeight + 2px;
   padding: 0px 12px;
 }
 .btn-small [class^="icon-"] {
   margin-top: -1px;
 }
 
+// Cross-browser Jank
+// --------------------------------------------------
+.btn { 
+  padding: 4px 12px 0px \9;
+  _padding: 2px 12px;
+}
+.btn-large {
+  padding: 7px 12px 3px \9;
+  _padding: 5px 12px;
+}
+.btn-small {
+  padding: 2px 12px 0px \9;
+  _padding: 0px 12px;
+}
 
 // Alternate buttons
 // --------------------------------------------------
@@ -173,31 +185,3 @@ btn[disabled] {
 }
 
 
-// Cross-browser Jank
-// --------------------------------------------------
-
-button.btn,
-input[type="submit"].btn {
-
-  // Firefox 3.6 only I believe
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
-
-  // IE7 has some default padding on button controls
-  *padding-top: 2px;
-  *padding-bottom: 2px;
-  &.btn-large {
-    *padding-top: 7px;
-    *padding-bottom: 7px;
-  }
-  &.btn-small {
-    *padding-top: 3px;
-    *padding-bottom: 3px;
-  }
-  &.btn-mini {
-    *padding-top: 1px;
-    *padding-bottom: 1px;
-  }
-}
