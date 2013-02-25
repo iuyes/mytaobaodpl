@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="gbk">
+	<link href="../assets/css/tb-reset.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js"></script>
+	<script src="http://a.tbcdn.cn/p/snsdk/core.js"></script>
+</head>
+<body>
+<span class="sns-widget" data-friendfollow='{"userId":2055117420, skinType:"green3"}'></span>
+<span class="sns-widget" data-friendfollow='{"userId":176010454}'></span>
+<span class="sns-widget" data-friendfollow='{"userId":2055117420, skinType:"green"}'></span>
+<span class="sns-widget" data-friendfollow='{"userId":2055117420, skinType:"green2"}'></span>
+<br/>
+<span class="friend-follow-skin-green">
+	<a href="#" class="J_FriendFollow friend-follow" data-userid="176010454" >加关注</a>
+	<a href="#" class="J_FriendUnfollow friend-unfollow" data-userid="176010454" data-fans="true">取消关注</a>
+</span>
+<br/>
+<br/>
+<div style="display:inline-block" id="J_Action"></div>
+<button class="btn">点击动态更新组件</button>
+	<script>
+		KISSY.one('.btn').on('click',function(ev){
+			KISSY.one('#J_Action').html('<span class="friend-follow-skin-green3"><a href="#" class="friend-follow" data-userid="175754151">加关注</a></span>')
+			//直接用最里层API
+			SNS.require(['sns/widget/follow/follow'], function(FriendFollow) {
+				FriendFollow.update('#J_Action a');
+			});
+		})
+	</script>
+
+</body>
+</html>

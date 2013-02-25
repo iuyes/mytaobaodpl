@@ -1,0 +1,460 @@
+.header-bg-full {
+    width: 100%;
+    height: 148px;
+    background: url(http://img03.taobaocdn.com/tps/i3/T1tMH_XiFXXXcKdpTq-9-133.png) left top repeat-x;
+    z-index: 0;
+    position: absolute;
+}
+ 
+.qz-header {
+    width: 100%;
+    background: #454b51;
+    position: relative;
+    z-index: 11;
+}
+.qz-header .header-content {
+    width: 990px;
+    margin: 0 auto 0;
+    padding: 10px 0 10px 0;
+    height: 83px;
+    position: relative;
+}
+ 
+.qz-header:after,
+.qz-header .header-content:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both;
+}
+ 
+.qz-header h2 a,
+.qz-header .no-member .avatar-wrap,
+.follow-list dt span,
+.qz-header .member-wrap.current .cur-arrows,
+.follow-list dt,
+#qz-receive-invite .tip,
+.qz-header h2 s,
+.sign-wrap .sign-btn,
+.sign-wrap .wrap-btn,
+.qz-header .qz-login-btn a{
+    background: url(/apps/grouplus/qz/back/qz-header-new.png) left -9999em no-repeat;
+}
+ 
+.qz-header .member-wrap .group-name,
+.qz-header .no-member .group-name {
+    font-family: "Microsoft YaHei", "微软雅黑";
+}
+ 
+.qz-header .member-wrap .group-name a:link,
+.qz-header .member-wrap .group-name a:hover,
+.qz-header .member-wrap .group-name a {
+    color: #555;
+}
+ 
+/* css3 transition */
+.qz-header .member-wrap .scale,
+.qz-header .member-wrap .show,
+.qz-header .member-wrap .avatar s,
+.qz-header .member-wrap .avatar,
+.qz-header .member-wrap .avatar-wrap {
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transform: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+ 
+/* qz-header */
+ 
+/* create-group */
+.qz-header .create-group {
+    float: left;
+	margin: 20px 10px 12px 20px;
+    _overflow: hidden;
+}
+ 
+.qz-header .create-group li {
+    float: left;
+    width: 81px;
+    height: 81px;
+    margin: 0 30px;
+}
+ 
+.qz-header .no-member .avatar-wrap {
+    border: 0px none;
+    /*background-position: left -101px;*/
+    background: url(/apps/grouplus/qz/back/zujian.png?1) no-repeat 0px 0px;
+    _background: url(/apps/grouplus/qz/back/qz-header-new.png) no-repeat 0 -101px;
+    width: 82px;
+    height: 83px;
+    cursor: pointer;
+}
+ 
+.qz-header .no-member .avatar-wrap:hover {
+    /*background-position: -96px -101px;*/
+    /*background: url(/apps/grouplus/qz/back/qz-header-new.png) no-repeat -96px -101px;*/
+    /*background: url(/apps/grouplus/qz/back/myfollow.png) no-repeat 0 0;*/
+    background-position: 0 -82px;
+    _background: url(/apps/grouplus/qz/back/qz-header-new.png) no-repeat -96px -101px;
+}
+ 
+/* avatar */
+.qz-header .member-wrap {
+    position: relative;
+}
+ 
+.qz-header .member-wrap .group-name,
+.qz-header .no-member .group-name {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+ 
+.qz-header .member-wrap.current .group-name,
+.qz-header .member-wrap.current .group-name a {
+    color: #55bb99;
+}
+ 
+.qz-header .member-wrap s,
+.qz-header .member-wrap .membe-number {
+    display: block;
+    position: absolute;
+ 
+}
+ 
+.qz-header .member-wrap s {
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: #8d9094;
+    background-position: center center;
+    text-indent: -9999em;
+    background-size: 30px;
+}
+ 
+.qz-header .member-wrap .avatar-1 {
+    left: 37px;
+    top: 10px;
+}
+ 
+.qz-header .member-wrap .avatar-2 {
+    right: 33px;
+    top: 9px;
+}
+ 
+.qz-header .member-wrap .avatar-3 {
+    top: 38px;
+    right: 4px;
+}
+ 
+.qz-header .member-wrap .avatar-4 {
+    right: 5px;
+    bottom: 35px;
+}
+ 
+.qz-header .member-wrap .avatar-5 {
+    right: 31px;
+    bottom: 9px;
+}
+ 
+.qz-header .member-wrap .avatar-6 {
+    left: 41px;
+    bottom: 9px;
+}
+ 
+.qz-header .member-wrap .avatar-7 {
+    left: 11px;
+    bottom: 34px;
+}
+ 
+.qz-header .member-wrap .avatar-8 {
+    left: 10px;
+    top: 38px;
+}
+ 
+.qz-header .member-wrap {
+    position: relative;
+}
+ 
+.qz-header .member-wrap .cur-arrow {
+    border-style: solid;
+    border-width: 7px 8px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    left: 33px;
+    bottom: -12px;
+    width: 0;
+    border-color: transparent transparent #e2e2e4 transparent;
+    _border-color: #454b51 #454b51 #e2e2e4 #454b51;
+}
+ 
+.qz-header .member-wrap .avatar-wrap {
+    width: 81px;
+    height: 81px;
+    border-radius: 81px;
+    background: #65696e;
+    z-index: 1;
+}
+ 
+.qz-header .member-wrap .scale {
+    -moz-transform: scale(1.7, 1.7);
+    -webkit-transform: scale(1.7, 1.7);
+    -o-transform: scale(1.7, 1.7);
+    -ms-transform: scale(1.7, 1.7);
+    transform: scale(1.7, 1.7);
+    position: relative;
+    left: 1px;
+    top: 1px;
+ 
+}
+ 
+.qz-header .member-wrap .membe-number {
+    color: #231f20;
+    top: 37px;
+    text-align: center;
+    width: 66px;
+    height: 66px;
+    background: #31811b;
+    border-radius: 66px;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    cursor: pointer;
+    z-index: 2;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+ 
+.qz-header .member-wrap .txt {
+    width: 59px;
+    margin: 15px auto 0 auto;
+    color: #31811b;
+}
+ 
+.qz-header .member-wrap .txt em {
+    font-weight: bold;
+}
+ 
+.qz-header .member-wrap .txt em,
+.qz-header .member-wrap.current .txt em {
+ 
+}
+ 
+.qz-header .member-wrap .membe-number {
+    background: #95d186;
+}
+ 
+.qz-header .member-wrap .membe-number {
+    background: #95d186;
+}
+ 
+.qz-header .member-wrap .avatar-wrap-hover .txt,
+.qz-header .member-wrap:hover .txt,
+.qz-header .member-wrap:hover .txt em {
+    color: #fff;
+}
+ 
+.qz-header .member-wrap:hover .membe-number {
+    background: #31811b;
+}
+ 
+.qz-header .member-wrap .avatar {
+    position: absolute;
+    width: 140px;
+    height: 142px;
+    margin: 5px;
+    left: -37px;
+    top: -35px;
+    border-radius: 140px;
+    z-index: 3;
+    -ms-transition: opacity 0.1s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+ 
+}
+ 
+.qz-header .member-wrap .show {
+    opacity: 1;
+}
+ 
+/* 默认情况 */
+.qz-header .member-wrap.small-avatar s {
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-1 {
+    left: 50px;
+    top: 33px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-2 {
+    right: 50px;
+    top: 33px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-3 {
+    top: 50px;
+    right: 30px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-4 {
+    right: 31px;
+    bottom: 48px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-5 {
+    right: 50px;
+    bottom: 30px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-6 {
+    left: 50px;
+    bottom: 31px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-7 {
+    left: 34px;
+    bottom: 48px;
+}
+ 
+.qz-header .member-wrap.small-avatar .avatar-8 {
+    left: 33px;
+    top: 50px;
+}
+ 
+.qz-header .qz-login-btn{
+    margin-left:150px;
+}
+ 
+.qz-header .qz-login-btn a{
+    display: block;
+    width: 59px;
+    height: 30px;
+    float:left;
+    font-size: 0;
+    background-position: -108px -522px;
+    margin-top:30px;
+}
+ 
+.qz-header .qz-login-btn a:hover{
+    background-position: -108px -563px;
+}
+ 
+/* follow-list */
+.qz-header .follow-list {
+    float: left;
+    position: relative;
+    padding-left: 15px;
+}
+ 
+.qz-header .follow-list .arrow-wrap {
+    height: 10px;
+}
+ 
+.qz-header .follow-list .arrow {
+    border-style: solid;
+    border-width: 7px 7px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    left: 75px;
+    top: -4px;
+    width: 0;
+    border-color: transparent transparent #191919 transparent;
+}
+ 
+.follow-list dt {
+    position: relative;
+    width: 86px;
+    height: 83px;
+    background: url(/apps/grouplus/qz/back/myfollow.png) no-repeat 0px 0px;
+    _background: url(/apps/grouplus/qz/back/qz-header-new.png) no-repeat 0px -205px;
+    cursor: pointer;
+    text-indent: 8px;
+    font-size: 14px;
+}
+ 
+.follow-list dd {
+    display: none;
+    position: absolute;
+    top: 83px;
+    left: -24px;
+    z-index: 2;
+    width: 174px;
+    overflow: hidden;
+}
+ 
+.follow-list dd a {
+    color: #fff;
+}
+ 
+.follow-list dd a:hover {
+    text-decoration: none;
+}
+ 
+.qz-header .follow-list:hover dt {
+    background-position: 0px -83px;
+    _background: url(/apps/grouplus/qz/back/qz-header-new.png) no-repeat 0 -511px;
+}
+ 
+.follow-list:hover dd {
+    display: block;
+    position: absolute;
+}
+ 
+.follow-list dd p:first-child {
+    border-top: 0;
+}
+ 
+.follow-list dd p {
+    padding: 7px 0 8px 10px;
+    white-space: nowrap;
+    color: #e3e3e3;
+    background-color: #191919;
+    border-bottom: 1px solid #0b0b0b;
+    border-top: 1px solid #202020;
+    cursor: pointer;
+}
+ 
+.follow-list dd p:hover {
+    background: #111111;
+ 
+}
+ 
+.follow-list dd p.goqz {
+    position: relative;
+}
+ 
+.follow-list dd p.goqz i {
+    border-style: solid;
+    border-width: 4px 4px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    left: 53px;
+    top: 7px;
+    width: 0;
+    border-color: transparent transparent transparent #fff;
+    _border-color: #31811b #31811b #31811b #fff;
+}
+ 
+.follow-list dd h5 {
+    background: #31811B;
+    line-height: 25px;
+    height: 25px;
+    color: #fff;
+    font-weight: normal;
+    text-indent: 10px;
+}

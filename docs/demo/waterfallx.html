@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waterfallx</title>
+    <meta charset="utf-8">
+    <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js" charset="gbk"></script>
+
+    <style type="text/css">
+        #wrapper {
+            width: 990px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+<div>iframe内鼠标滚动查看效果</div>
+<div id="wrapper"></div>
+<script type="tpl" id="tpl">
+    <div class="pin ks-waterfall" data-id="{{id}}">
+        <a href="#" class="image">
+            <img width="210" alt="{{title}}" src="http://farm{{farm}}.static.flickr.com/{{server}}/{{id}}_{{secret}}_m.jpg" />
+        </a>
+        <p class="description">{{title}}</p>
+    </div>
+</script>
+<script type="text/javascript">
+    KISSY.config({
+        packages:[
+            {
+                name:"util",
+                tag:"20111220",
+                path:"http://a.tbcdn.cn/p/sns/1.1/", 
+                charset:"utf-8"
+            }
+        ]
+    });
+	KISSY.use("util/waterfallx,template", function(S, Waterfall, Template) {
+		var $ = S.all;
+		var tpl = Template($('#tpl').html()),
+			nextpage = 1,
+			waterfall = new Waterfall.Loader({
+				container: "#wrapper",
+				load: function(success, end) {
+					$('#loadingPins').show();
+					S.ajax({
+						data: {
+							'method': 'flickr.photos.search',
+							'api_key': '5d93c2e473e39e9307e86d4a01381266',
+							'tags': 'rose',
+							'page': nextpage,
+							'per_page': 20,
+							'format': 'json'
+						},
+						url: 'http://api.flickr.com/services/rest/',
+						dataType: "jsonp",
+						jsonp: "jsoncallback",
+						success: function(d) {
+							// 如果数据错误, 则立即结束
+							if (d.stat !== 'ok') {
+								alert('load data error!');
+								end();
+								return;
+							}
+							// 如果到最后一页了, 也结束加载
+							nextpage = d.photos.page + 1;
+							if (nextpage > d.photos.pages) {
+								console.log(d.photos.pages)
+								end();
+								return;
+							}
+							// 拼装每页数据
+							var items = [];
+							S.each(d.photos.photo, function(item) {
+								items.push(new S.Node(tpl.render(item)));
+							});
+							success(items);
+						}
+					});
+				},
+				colWidth: 228
+			});
+	})
+</script>
+</body>
+</html>

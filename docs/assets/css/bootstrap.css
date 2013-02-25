@@ -924,17 +924,17 @@ btn[disabled] {
 }
 
 .tips-gray {
-  background-color: #eeeeee;
-  border: 1px solid #dadada;
+  background-color: #f9f9f9;
+  border: 1px solid #dddddd;
 }
 
 .tips-gray .tips-arrow-top i {
-  border-bottom-color: #dadada;
+  border-bottom-color: #dddddd;
   _border-bottom-style: solid;
 }
 
 .tips-gray .tips-arrow-top i.last {
-  border-bottom-color: #eeeeee;
+  border-bottom-color: #f9f9f9;
 }
 
 /* -----------------------------

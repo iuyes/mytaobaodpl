@@ -1,0 +1,58 @@
+// OCP - TAB STYLES
+// -------------
+
+@tabBorderColor: #ccc;
+@tabBackgroundImage: "http://img02.taobaocdn.com/tps/i2/T1lhZkXjhhXXbAZDfx-300-72.png";
+
+ul.tab {
+    margin-top: 20px;
+    margin: 0;
+    padding: 0;
+    height: 32px;
+    padding-left: 20px;
+    border-bottom: 1px solid @tabBorderColor;
+	li {
+		float: left;
+		list-style: none;
+		margin-right: 15px;
+	}
+	a, a span {
+		background: url(@tabBackgroundImage) repeat-x scroll 0 0 transparent;
+	}
+	a span {
+		display: inline-block;
+		background-position: 100% -36px;
+		background-repeat: no-repeat;
+		color: #a7a7a7;
+		cursor: pointer;
+		padding-top: 7px;
+		padding-right: 10px;
+		margin-top: 0;
+		height: 22px;
+		font-size: 14px;
+		text-align: center;
+	}
+	a {
+		padding-left: 10px;
+		display: inline-block;
+		margin-top: 3px;
+		background-position: 0 -36px;
+		background-repeat: no-repeat;
+		outline: none;
+	}
+	.selected a {
+		position: relative;
+		top: 3px;
+		margin-top: 0px;
+		background-position: 0 0;
+		text-decoration: none;
+		color:#333
+	}
+	.selected a span {
+		background-position: 100% 0;
+		font-weight: 700;
+		margin-top:0px; 
+		color:#333;
+		height:23px;
+	}
+}

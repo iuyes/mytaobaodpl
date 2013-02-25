@@ -1,0 +1,134 @@
+// OCP - tips STYLES
+// -------------
+
+// 变量
+// -------------
+
+// 气泡背景色
+@tipsBackgrond: #fbf2d1;
+@tipsBackgrondGray: #f9f9f9;
+// 气泡边框颜色
+@tipsBorder: #f5d8a1;
+@tipsBorderGray: #ddd;
+// 气泡箭头边框宽度
+@tipsArrowBorderWidth: 1px;
+// 气泡箭头高度
+@tipsArrowWidth: 6px;
+
+.tips {
+    padding: 5px;
+    margin-bottom: @baseLineHeight;
+    background-color: @tipsBackgrond;
+    border: 1px solid @tipsBorder;
+    color: @gray;
+    position: relative;
+  	zoom:1;/*ie7 hack*/
+	border-radius: 2px;
+
+    .tips-arrow {
+        position: absolute;
+
+        i {
+            height: 0px;
+            width: 0px;
+            border-color: transparent;
+            border-style: solid;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-width: @tipsArrowWidth + @tipsArrowBorderWidth;
+			_line-height: 0;
+			_border-style: dashed;
+        }
+        i.last {
+            border-width: @tipsArrowWidth;
+        }
+    }
+
+    // 让箭头出现在上方
+    .tips-arrow-top {
+
+        top: -(@tipsArrowWidth + @tipsArrowBorderWidth) * 2;
+        left: 10px;
+
+        i {
+			_border-bottom-style: solid;
+            border-bottom-color: @tipsBorder;
+        }
+
+        i.last {
+            top: @tipsArrowBorderWidth * 2;
+            left: @tipsArrowBorderWidth;
+            border-bottom-color: @tipsBackgrond;
+        }
+    }
+
+    // 让箭头出现在下方
+    .tips-arrow-bottom {
+
+        bottom: 0;
+        left: 10px;
+
+        i {
+            border-top-color: @tipsBorder;
+			_border-top-style: solid;
+        }
+
+        i.last {
+            bottom: @tipsArrowBorderWidth * 2;
+            left: @tipsArrowBorderWidth;
+            border-top-color: @tipsBackgrond;
+        }
+    }
+
+    // 让箭头出现在下方
+    .tips-arrow-left {
+
+        top: 5px;
+        left: -(@tipsArrowWidth + @tipsArrowBorderWidth) * 2;
+
+        i {
+            border-right-color: @tipsBorder;
+			_border-right-style: solid;
+        }
+
+        i.last {
+            left: @tipsArrowBorderWidth * 2;
+            top: @tipsArrowBorderWidth;
+            border-right-color: @tipsBackgrond;
+        }
+    }
+
+    // 让箭头出现在下方
+    .tips-arrow-right {
+
+        top: 5px;
+        right: 0;
+
+        i {
+            border-left-color: @tipsBorder;
+			_border-left-style: solid;
+        }
+
+        i.last {
+            left: 0;
+            top: @tipsArrowBorderWidth;
+            border-left-color: @tipsBackgrond;
+        }
+    }
+}
+
+.tips-gray{
+	background-color: @tipsBackgrondGray;
+	border: 1px solid @tipsBorderGray;
+    .tips-arrow-top {
+        i {
+			border-bottom-color: @tipsBorderGray;
+			_border-bottom-style: solid;
+        }
+
+        i.last {
+			border-bottom-color: @tipsBackgrondGray;
+        }
+    }
+} 

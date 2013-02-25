@@ -1,0 +1,49 @@
+.qz-header .member-wrap .avatar-wrap{
+    background:url('/apps/grouplus/qz/back/ie.png') left -9999em no-repeat;
+    _background:url('/apps/grouplus/qz/back/ie.gif') left -9999em no-repeat;
+    cursor:pointer;
+}
+.qz-header .member-wrap .avatar-wrap{
+    width:98px;
+    height:98px;
+    border:0px none;
+    background-position:left top;
+    position:absolute;
+ 
+}
+.qz-header .member-wrap.current .avatar-wrap{
+    background-position:left top;
+}
+ 
+.qz-header .member-wrap .membe-number{
+    background:none;
+	left:9px;
+}
+.qz-header .member-wrap.current .avatar-wrap-hover .membe-number,
+.qz-header .member-wrap.current .membe-number{
+    background:none !important;
+}
+.qz-header .member-wrap:hover .avatar-wrap,
+.qz-header .member-wrap .avatar-wrap-hover{
+    width: 140px;
+    height: 141px;
+    left: -34px;
+    top: -33px;
+    margin:5px;
+    background:url('/apps/grouplus/qz/back/ie-circle.png') -2px -2px no-repeat;
+}
+.qz-header .member-wrap .txt em{
+     color:#31811B;
+}
+.qz-header .member-wrap:hover .membe-number{
+    background:none;
+}
+ 
+.qz-header .member-wrap .avatar{
+    visibility:hidden;
+     
+}
+.qz-header .member-wrap:hover .avatar{
+ 
+    visibility:visible;
+}

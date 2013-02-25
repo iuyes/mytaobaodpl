@@ -1,8 +1,7 @@
-var dw = require( 'DirWatcher' );
-var exec = require( 'child_process').exec;
+var dw = require('DirWatcher');
+var exec = require('child_process').exec;
 
-dw.watchDir( './docs', function (){
-
+dw.watchDir('./docs', function (){
     console.log( 'change!' );
     exec( 'make' );
 });
